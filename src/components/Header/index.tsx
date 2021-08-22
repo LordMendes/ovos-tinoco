@@ -1,33 +1,42 @@
-import {
-  Flex,
-  HStack,
-  Icon,
-  IconButton,
-  useBreakpointValue,
-  Image,
-} from "@chakra-ui/react";
-import { RiMenuLine } from "react-icons/ri";
-import { useNavbarDrawer } from "../../contexts/NavbarDropdownMenuContext";
+import { Box, Flex, HStack, Icon, IconButton, Image } from "@chakra-ui/react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { NavbarWideScreen } from "../NavbarWideScreen";
 
-export default function Header() {
-  const isWideScreen = useBreakpointValue({
-    base: false,
-    sm: true,
-  });
+interface HeaderProps {
+  isWideScreen: boolean;
+  onOpen: () => void;
+}
 
-  const { onOpen } = useNavbarDrawer();
-
+export function Header({ isWideScreen, onOpen }: HeaderProps) {
   return (
-    <HStack justifyContent="space-between" h="5rem" mx="8">
+    <HStack
+      justifyContent="space-between"
+      h={["5rem", "6rem"]}
+      px={["6", "8", "14"]}
+      borderBottomWidth="6px"
+      borderColor="blue.500"
+    >
       <Image src="./images/Logo.svg" alt="Logo" />
-      <IconButton
-          icon={<Icon as={RiMenuLine} />}
-          fontSize="24"
-          variant="unstyled"
+      {!isWideScreen && (
+        <IconButton
+          icon={<Icon as={GiHamburgerMenu} />}
+          fontSize="4xl"
           onClick={onOpen}
-          aria-label='Open navigation'
-          mr='2'
+          aria-label="Open navigation"
+          color="blue.500"
+          bg="white"
+          mt={4}
         ></IconButton>
+      )}
+      {isWideScreen && (
+        <>
+          <NavbarWideScreen />
+          <Flex direction="row">
+            <Image src="./images/IG_Glyph_Fill.png" alt="Instagram Logo" />
+            <Image src="./images/facebook.svg" alt="Facebook Logo" />
+          </Flex>
+        </>
+      )}
     </HStack>
   );
 }

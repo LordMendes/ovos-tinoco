@@ -1,11 +1,38 @@
-import { Flex } from "@chakra-ui/react";
-import Header from "../components/Header";
+import { Box, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import { NavbarMobileScreen } from "../components/NavbarMobileScreen";
+import { HeaderController } from "../controllers/HeaderController";
 
 export default function Home() {
+  const isWideScreen = useBreakpointValue({
+    base: false,
+    sm: true,
+  });
+
   return (
     <Flex direction="column" h="100vh">
-      <Header />
-      <h1>Helvetica Neue</h1>
+      <NavbarMobileScreen />
+      <HeaderController />
+      {!isWideScreen ? (
+        <Image
+          src="./images/Slideshow4@3x.png"
+          alt="Institucional Mobile"
+          w="100%"
+        />
+      ) : (
+        <Image
+          src="./images/Institucional@2x.png"
+          alt="Institucional"
+          w="100%"
+        />
+      )}
+      <Box bg="blue.500" w="100%" py={["1rem"]} align="center">
+        <Text color="white" fontWeight={700}>
+          Acompanhe nosso instagram{" "}
+          <Text as="span" color="yellow.500">
+            @ovostinoco
+          </Text>
+        </Text>
+      </Box>
     </Flex>
   );
 }
