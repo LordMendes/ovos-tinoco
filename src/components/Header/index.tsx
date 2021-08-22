@@ -15,6 +15,7 @@ export function Header({ isWideScreen, onOpen }: HeaderProps) {
       px={["6", "8", "14"]}
       borderBottomWidth="6px"
       borderColor="blue.500"
+      minHeight="5rem"
     >
       <Image src="./images/Logo.svg" alt="Logo" />
       {!isWideScreen && (

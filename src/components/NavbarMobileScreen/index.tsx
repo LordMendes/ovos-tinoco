@@ -9,6 +9,7 @@ import {
   DrawerBody,
   Divider,
   Image,
+  Flex,
 } from "@chakra-ui/react";
 import { useNavbarDrawer } from "../../contexts/NavbarDropdownMenuContext";
 
@@ -17,19 +18,18 @@ export function NavbarMobileScreen() {
   return (
     <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
       <DrawerOverlay>
-        <DrawerContent bg="white" p="4">
+        <DrawerContent bg="white" h="100vh">
           <DrawerCloseButton
-            mt="6"
-            mr="6"
+            mt="4"
             fontSize="20"
             fontWeight={900}
             color="blue.500"
             bg="white !important"
           />
           <DrawerHeader mb="6">
-          <Image src="./images/Logo.svg" alt="Logo" />
+            <Image src="./images/Logo.svg" alt="Logo" />
           </DrawerHeader>
-          <DrawerBody>
+          <DrawerBody px="14px">
             <VStack>
               <Text ml="auto !important" color="blue.500" fontSize="22">
                 início
@@ -76,7 +76,19 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
+             
             </VStack>
+            <Flex direction="column" align="center" mt="40%">
+                <Text color="blue.500" fontSize={["22", "22"]} mb="4">Siga-nos em nossas redes sociais</Text>
+                <Flex direction="row">
+                  <Image
+                    src="./images/IG_Glyph_Fill.png"
+                    alt="Instagram Logo"
+                    mr="2"
+                  />
+                  <Image src="./images/facebook.svg" alt="Facebook Logo" />
+                </Flex>
+              </Flex>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
