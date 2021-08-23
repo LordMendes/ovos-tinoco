@@ -31,7 +31,7 @@ export function NewsletterCardForm({
   handleSignNewsletter,
 }: NewsletterCardFormProps) {
   return (
-    <Flex direction="column" mx="5" align="center">
+    <Flex direction="column" align="center">
       <Heading size="lg" color="blue.500" fontWeight={900} mb="4">
         Assine a nossa newsletter
       </Heading>

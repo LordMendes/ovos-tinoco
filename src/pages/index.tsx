@@ -15,7 +15,7 @@ export default function Home() {
   });
 
   return (
-    <Flex direction="column" h="100vh">
+    <Flex direction="column" h="100vh" align={isWideScreen ? "center" : ""}>
       <NavbarMobileScreen />
       <HeaderController />
       {!isWideScreen ? (
@@ -53,8 +53,10 @@ export default function Home() {
         imageTitle="Caixas de ovos"
         imageURL="./images/banner-vertical-ovos-produtos@3x.png"
       />
-      <NewsletterCardFormController />
-      <CertificationCard />
+      <Box as="section" mx="5">
+        <NewsletterCardFormController />
+        <CertificationCard />
+      </Box>
       <Footer />
     </Flex>
   );

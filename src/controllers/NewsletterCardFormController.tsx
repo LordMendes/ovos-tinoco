@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { NewsletterCardForm } from "../components/NewsletterCard";
+import { NewsletterCardForm } from "../components/NewsletterCardForm";
 
 const newsletterValidationSchema = Yup.object().shape({
   userName: Yup.string().required("Nome obrigatório"),
