@@ -1,4 +1,4 @@
-import { Box, Button, Image, Text } from "@chakra-ui/react";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
 
 export function RecipeInviteCard() {
   return (
@@ -9,11 +9,11 @@ export function RecipeInviteCard() {
           Clique aqui e confira receitas deliciosas!
         </Text>
         <Button
+          fontWeight={300}
+          p="2"
           bg="white"
           fontSize="12"
           color="blue.500"
-          fontWeight={300}
-          p="2"
           h="22px"
         >
           Acesse agora

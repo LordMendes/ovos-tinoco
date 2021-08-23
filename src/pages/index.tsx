@@ -1,10 +1,12 @@
 import { Box, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import { CertificationCard } from "../components/CertificationCard";
+import { Footer } from "../components/Footer";
 import { InfoCard } from "../components/InfoCard";
 import { MarketingCard } from "../components/MarketingCard";
 import { NavbarMobileScreen } from "../components/NavbarMobileScreen";
-import { NewsletterCard } from "../components/NewsletterCard";
 import { RecipeInviteCard } from "../components/RecipeInviteCard";
 import { HeaderController } from "../controllers/HeaderController";
+import { NewsletterCardFormController } from "../controllers/NewsletterCardFormController";
 
 export default function Home() {
   const isWideScreen = useBreakpointValue({
@@ -51,7 +53,9 @@ export default function Home() {
         imageTitle="Caixas de ovos"
         imageURL="./images/banner-vertical-ovos-produtos@3x.png"
       />
-      <NewsletterCard />
+      <NewsletterCardFormController />
+      <CertificationCard />
+      <Footer />
     </Flex>
   );
 }
