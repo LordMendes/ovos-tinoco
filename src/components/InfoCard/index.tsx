@@ -23,7 +23,7 @@ export function InfoCard() {
       direction={isWideScreen ? "row" : "column"}
       mx="5"
       mt="7"
-      mb="2"
+      mb={["2","2","-6"]}
       maxW={["100%", "720px", "720px", "1242px"]}
     >
       <Box mr={["0", "6", "6", "10", "24"]}>
