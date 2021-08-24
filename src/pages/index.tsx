@@ -1,4 +1,11 @@
-import { Box, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Image,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { CertificationCard } from "../components/CertificationCard";
 import { Footer } from "../components/Footer";
 import { InfoCard } from "../components/InfoCard";
@@ -41,19 +48,29 @@ export default function Home() {
       </Box>
       <InfoCard />
       <RecipeInviteCard />
-      <MarketingCard
-        boldHeading="Galinhas 100% livres"
-        lightHeading="de hormônios e antibióticos"
-        imageTitle="Galinha"
-        imageURL="./images/banner-vertical-ovos-antibioticos@3x.png"
-      />
-      <MarketingCard
-        boldHeading="Conheça toda"
-        lightHeading="Nossa linha de ovos"
-        imageTitle="Caixas de ovos"
-        imageURL="./images/banner-vertical-ovos-produtos@3x.png"
-      />
-      <Box as="section" mx="5">
+      <Stack
+        direction={["column", "row"]}
+        maxW={["100%", "740px", "760px", "1292px"]}
+        mt={["0", "0", "4", "8", "12"]}
+      >
+        <MarketingCard
+          boldHeading="Galinhas 100% livres"
+          lightHeading="de hormônios e antibióticos"
+          imageTitle="Galinha"
+          imageURL="./images/banner-vertical-ovos-antibioticos@3x.png"
+          imagePosition="bottom"
+          isWideScreen={isWideScreen}
+        />
+        <MarketingCard
+          boldHeading="Conheça toda"
+          lightHeading="Nossa linha de ovos"
+          imageTitle="Caixas de ovos"
+          imageURL="./images/banner-vertical-ovos-produtos@3x.png"
+          imagePosition="top"
+          isWideScreen={isWideScreen}
+        />
+      </Stack>
+      <Box as="section" mx="8">
         <NewsletterCardFormController />
         <CertificationCard />
       </Box>

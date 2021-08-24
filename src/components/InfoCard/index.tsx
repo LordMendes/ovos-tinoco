@@ -21,7 +21,7 @@ export function InfoCard() {
   return (
     <Flex
       direction={isWideScreen ? "row" : "column"}
-      mx="5"
+      mx="8"
       mt="7"
       mb={["2","2","-6"]}
       maxW={["100%", "720px", "720px", "1242px"]}
