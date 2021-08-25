@@ -6,6 +6,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { Carousel } from "../components/Carousel";
 import { CertificationCard } from "../components/CertificationCard";
 import { Footer } from "../components/Footer";
 import { InfoCard } from "../components/InfoCard";
@@ -25,7 +26,7 @@ export default function Home() {
     <Flex direction="column" h="100vh" align={isWideScreen ? "center" : ""}>
       <NavbarMobileScreen />
       <HeaderController />
-      {!isWideScreen ? (
+      {/* {!isWideScreen ? (
         <Image
           src="./images/Slideshow4@3x.png"
           alt="Institucional Mobile"
@@ -37,7 +38,14 @@ export default function Home() {
           alt="Institucional"
           w="100%"
         />
-      )}
+      )} */}
+      <Box
+        w="100%"
+        position="relative"
+        h={["550px", "625px", "700px", "800px", "900px"]}
+      >
+        <Carousel />
+      </Box>
       <Box bg="blue.500" w="100%" py={["1rem"]} align="center">
         <Text color="white" fontWeight={700}>
           Acompanhe nosso instagram{" "}
