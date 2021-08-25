@@ -5,7 +5,7 @@ import styled from "./styles.module.scss";
 
 export const Carousel = (props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [sliderRef, slider] = useKeenSlider({
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
