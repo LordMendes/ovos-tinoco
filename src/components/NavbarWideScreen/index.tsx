@@ -1,4 +1,4 @@
-import { HStack, Text,  Image } from "@chakra-ui/react";
+import { HStack, Text } from "@chakra-ui/react";
 
 export function NavbarWideScreen() {
   return (

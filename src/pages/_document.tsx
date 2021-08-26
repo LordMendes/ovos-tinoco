@@ -4,13 +4,7 @@ export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html>
-        <Head>
-          <title>Ovos Tinoco</title>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

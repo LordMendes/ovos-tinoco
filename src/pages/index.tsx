@@ -6,6 +6,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import { Carousel } from "../components/Carousel";
 import { CertificationCard } from "../components/CertificationCard";
 import { Footer } from "../components/Footer";
@@ -24,21 +25,12 @@ export default function Home() {
 
   return (
     <Flex direction="column" h="100vh" align={isWideScreen ? "center" : ""}>
+      <Head>
+        <title>Ovos Tinoco</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <NavbarMobileScreen />
       <HeaderController />
-      {/* {!isWideScreen ? (
-        <Image
-          src="./images/Slideshow4@3x.png"
-          alt="Institucional Mobile"
-          w="100%"
-        />
-      ) : (
-        <Image
-          src="./images/Institucional@2x.png"
-          alt="Institucional"
-          w="100%"
-        />
-      )} */}
       <Box
         w="100%"
         position="relative"
@@ -58,8 +50,9 @@ export default function Home() {
       <RecipeInviteCard />
       <Stack
         direction={["column", "row"]}
-        maxW={["100%", "740px", "760px", "1292px"]}
+        maxW={["100%", "740px", "760px", "1302px"]}
         mt={["0", "0", "4", "8", "12"]}
+        mx={["",""]}
       >
         <MarketingCard
           boldHeading="Galinhas 100% livres"
@@ -78,9 +71,11 @@ export default function Home() {
           isWideScreen={isWideScreen}
         />
       </Stack>
-      <Box as="section" mx="8">
-        <NewsletterCardFormController />
-        <CertificationCard />
+      <Box as="div" width="100%">
+        <Box as="section" mx="7">
+          <NewsletterCardFormController />
+          <CertificationCard />
+        </Box>
       </Box>
       <Footer />
     </Flex>
