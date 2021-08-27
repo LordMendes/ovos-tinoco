@@ -9,6 +9,7 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavbarWideScreen } from "../NavbarWideScreen";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface HeaderProps {
   isWideScreen: boolean;
@@ -16,6 +17,14 @@ interface HeaderProps {
 }
 
 export function Header({ isWideScreen, onOpen }: HeaderProps) {
+  const { push } = useRouter();
+
+  function handleClick(socialMedia: string) {
+    if (socialMedia === "facebook") {
+      return push("https://www.facebook.com");
+    }
+    return push("https://www.instagram.com");
+  }
   return (
     <HStack
       justifyContent="space-between"
@@ -45,16 +54,12 @@ export function Header({ isWideScreen, onOpen }: HeaderProps) {
         <>
           <NavbarWideScreen />
           <Flex direction="row" minW="10">
-            <Link href="https://www.instagram.com">
-              <ChakraLink>
-                <Image src="./images/IG_Glyph_Fill.png" alt="Instagram Logo" />
-              </ChakraLink>
-            </Link>
-            <Link href="https://www.facebook.com">
-              <ChakraLink my="auto">
-                <Image src="./images/facebook.svg" alt="Facebook Logo" />
-              </ChakraLink>
-            </Link>
+            <ChakraLink onClick={() => handleClick("instagram")}>
+              <Image src="./images/IG_Glyph_Fill.png" alt="Instagram Logo" />
+            </ChakraLink>
+            <ChakraLink my="auto" onClick={() => handleClick("facebook")}>
+              <Image src="./images/facebook.svg" alt="Facebook Logo" />
+            </ChakraLink>
           </Flex>
         </>
       )}

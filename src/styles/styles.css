@@ -101,6 +101,14 @@
     top: 94%;
   }
 }
+@media (max-width: 1000px) {
+  .navigation-wrapper {
+    height: 625px;
+  }
+  .dots {
+    top: 93%;
+  }
+}
 
 @media (max-width: 790px) {
   .navigation-wrapper {
