@@ -10,7 +10,7 @@ import {
 export function InfoCard() {
   const isWideScreen = useBreakpointValue({
     base: false,
-    sm: true,
+    md: true,
   });
 
   return (
@@ -21,7 +21,7 @@ export function InfoCard() {
       mb={["2", "2", "-6"]}
       maxW={["100%", "720px", "720px", "1242px"]}
     >
-      <Box mr={["0", "6", "6", "10", "24"]} w={["100%", "50%"]}>
+      <Box mr={["0", "6", "6", "10", "24"]} w={["100%", "100%", "50%"]}>
         <Heading
           fontSize={["22", "22", "22", "28", "34"]}
           fontWeight={900}
@@ -45,11 +45,12 @@ export function InfoCard() {
           produtos cheguem até sua casa!
         </Text>
       </Box>
-      <Box w={["100%", "50%"]} py={["0", "8"]}>
+      <Box w={["100%", "100%", "50%"]} py={["0", "0", "8"]}>
         <Image
           src="./images/juntos-ovos-tinoco@2x.png"
           alt="Juntos Ovos Tinoco"
           h="100%"
+          maxH={["250px", "400px", "100%"]}
         />
       </Box>
     </Flex>

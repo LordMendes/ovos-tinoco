@@ -10,11 +10,22 @@ import {
   Divider,
   Image,
   Flex,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { useNavbarDrawer } from "../../contexts/NavbarDropdownMenuContext";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export function NavbarMobileScreen() {
   const { isOpen, onClose } = useNavbarDrawer();
+  const { push } = useRouter();
+
+  function handleClick(socialMedia: string) {
+    if (socialMedia === "facebook") {
+      return push("https://www.facebook.com");
+    }
+    return push("https://www.instagram.com");
+  }
   return (
     <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
       <DrawerOverlay>
@@ -31,64 +42,89 @@ export function NavbarMobileScreen() {
           </DrawerHeader>
           <DrawerBody px="14px">
             <VStack>
-              <Text ml="auto !important" color="blue.500" fontSize="22">
-                início
-              </Text>
+              <Link href="/">
+                <ChakraLink>
+                  <Text ml="auto !important" color="blue.500" fontSize="22">
+                    início
+                  </Text>
+                </ChakraLink>
+              </Link>
               <Divider
                 orientation="horizontal"
                 borderBottomWidth="2px"
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Text ml="auto !important" color="blue.500" fontSize="22">
-                Institucional
-              </Text>
+              <Link href="/institucional">
+                <ChakraLink>
+                  <Text ml="auto !important" color="blue.500" fontSize="22">
+                    Institucional
+                  </Text>
+                </ChakraLink>
+              </Link>
               <Divider
                 orientation="horizontal"
                 borderBottomWidth="2px"
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Text ml="auto !important" color="blue.500" fontSize="22">
-                Ovos
-              </Text>
+              <Link href="/produtos">
+                <ChakraLink>
+                  <Text ml="auto !important" color="blue.500" fontSize="22">
+                    Ovos
+                  </Text>
+                </ChakraLink>
+              </Link>
               <Divider
                 orientation="horizontal"
                 borderBottomWidth="2px"
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Text ml="auto !important" color="blue.500" fontSize="22">
-                Receitas
-              </Text>
+              <Link href="/receitas">
+                <ChakraLink>
+                  <Text ml="auto !important" color="blue.500" fontSize="22">
+                    Receitas
+                  </Text>
+                </ChakraLink>
+              </Link>
               <Divider
                 orientation="horizontal"
                 borderBottomWidth="2px"
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Text ml="auto !important" color="blue.500" fontSize="22">
-                Contato
-              </Text>
+              <Link href="/contato">
+                <ChakraLink>
+                  <Text ml="auto !important" color="blue.500" fontSize="22">
+                    Contato
+                  </Text>
+                </ChakraLink>
+              </Link>
               <Divider
                 orientation="horizontal"
                 borderBottomWidth="2px"
                 opacity="1"
                 borderColor="blue.500"
               />
-             
             </VStack>
             <Flex direction="column" align="center" mt="40%">
-                <Text color="blue.500" fontSize={["22", "22"]} mb="4">Siga-nos em nossas redes sociais</Text>
-                <Flex direction="row">
+              <Text color="blue.500" fontSize={["22", "22"]} mb="4">
+                Siga-nos em nossas redes sociais
+              </Text>
+              <Flex direction="row">
+                <ChakraLink onClick={() => handleClick("instagram")}>
                   <Image
                     src="./images/IG_Glyph_Fill.png"
                     alt="Instagram Logo"
                     mr="2"
                   />
+                </ChakraLink>
+                <ChakraLink onClick={() => handleClick("facebook")} my="auto">
                   <Image src="./images/facebook.svg" alt="Facebook Logo" />
-                </Flex>
+                </ChakraLink>
               </Flex>
+            </Flex>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
