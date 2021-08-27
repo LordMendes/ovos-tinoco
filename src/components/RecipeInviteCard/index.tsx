@@ -2,16 +2,20 @@ import { Box, Image, Text, Button } from "@chakra-ui/react";
 
 export function RecipeInviteCard() {
   return (
-    <Box mr="8" position="relative" mb="6" maxW={["100%", "1262px"]}>
-      <Image
-        src="./images/Grupo-264@2x.png"
-        alt="Veja Nossas Receitas"
-        minHeight="8rem"
-      />
+    <Box
+      mr={["6", "12","20", "24"]}
+      position="relative"
+      mb="6"
+      w={["", "", "100%"]}
+      maxW={["96%","94%","94%","94%","1358px"]}
+    >
+      <Box>
+        <Image src="./images/Grupo-265@2x.png" alt="Veja Nossas Receitas" w="100%"/>
+      </Box>
       <Box
         position="absolute"
         left="32%"
-        top={["10", "32%"]}
+        top={["32%", "32%"]}
         w="40%"
         minW="142px"
       >

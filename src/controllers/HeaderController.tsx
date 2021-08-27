@@ -5,7 +5,7 @@ import { useNavbarDrawer } from "../contexts/NavbarDropdownMenuContext";
 export function HeaderController() {
   const isWideScreen = useBreakpointValue({
     base: false,
-    sm: true,
+    md: true,
   });
 
   const { onOpen } = useNavbarDrawer();

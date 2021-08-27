@@ -23,36 +23,36 @@ export function MarketingCard({
         <Heading
           fontSize={["23", "23", "24", "30", "45"]}
           fontWeight={900}
-          mx="8"
+          mx="2"
         >
           {boldHeading.toUpperCase()}
         </Heading>
         <Heading
           fontWeight={300}
-          fontSize={["20", "20", "20", "24", "38"]}
-          mx="8"
+          fontSize={["19", "20", "20", "24", "38"]}
+          mx="2"
         >
           {lightHeading.toUpperCase()}
         </Heading>
-        <Image src={imageURL} alt={imageTitle} mx="5" />
+        <Image src={imageURL} alt={imageTitle} />
       </Flex>
     );
   else {
     return (
       <Flex direction="column" mb="4">
-        <Image src={imageURL} alt={imageTitle} mx="5" />
+        <Image src={imageURL} alt={imageTitle} />
 
         <Heading
           fontSize={["23", "23", "26", "30", "45"]}
           fontWeight={900}
-          mx="8"
+          mx="2"
         >
           {boldHeading.toUpperCase()}
         </Heading>
         <Heading
           fontWeight={300}
           fontSize={["20", "20", "20", "24", "38"]}
-          mx="8"
+          mx="2"
         >
           {lightHeading.toUpperCase()}
         </Heading>

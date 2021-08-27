@@ -1,10 +1,3 @@
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 [class^="number-slide"],
 [class*=" number-slide"] {
   background: grey;
@@ -23,26 +16,30 @@ body {
 
 .number-slide1 {
   background-image: url("/images/Slide-OvosRicos.png");
-  background-size: cover;
+  background-size: 100% 100%;
   background-color: #cccccc;
+  background-position: center;
 }
 
 .number-slide2 {
   background-image: url("/images/Slide-receita.png");
-  background-size: cover;
+  background-size: 100% 100%;
   background-color: #cccccc;
+  background-position: center;
 }
 
 .number-slide3 {
   background-image: url("/images/Slide-OvosRicos.png");
-  background-size: cover;
+  background-size: 100% 100%;
   background-color: #cccccc;
+  background-position: center;
 }
 
 .number-slide4 {
   background-image: url("/images/Slide-GSaudaveis.png");
-  background-size: cover;
+  background-size: 100% 100%;
   background-color: #cccccc;
+  background-position: center;
 }
 
 .number-slide5 {
@@ -96,44 +93,12 @@ body {
   background: #000;
 }
 
-.arrow {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  fill: #fff;
-  cursor: pointer;
-}
-
-.arrow--left {
-  left: 5px;
-}
-
-.arrow--right {
-  left: auto;
-  right: 5px;
-}
-
-.arrow--disabled {
-  fill: rgba(255, 255, 255, 0.5);
-}
-
 @media (max-width: 1440px) {
   .navigation-wrapper {
     height: 750px;
   }
   .dots {
     top: 94%;
-  }
-  .number-slide1 {
-  }
-  .number-slide2 {
-  }
-  .number-slide3 {
-  }
-  .number-slide4 {
   }
 }
 
@@ -145,12 +110,16 @@ body {
     top: 93%;
   }
   .number-slide1 {
+    background-size: 120% 100%;
   }
   .number-slide2 {
+    background-size: 120% 100%;
   }
   .number-slide3 {
+    background-size: 120% 100%;
   }
   .number-slide4 {
+    background-size: 120% 100%;
   }
 }
 
@@ -163,12 +132,15 @@ body {
     top: 92%;
   }
   .number-slide1 {
-    background-position: 50%;
+    background-size: 160% 100%;
   }
   .number-slide2 {
+    background-size: 160% 100%;
   }
   .number-slide3 {
+    background-size: 160% 100%;
   }
   .number-slide4 {
+    background-size: 160% 100%;
   }
 }

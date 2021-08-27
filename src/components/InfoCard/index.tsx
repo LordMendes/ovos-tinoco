@@ -12,21 +12,16 @@ export function InfoCard() {
     base: false,
     sm: true,
   });
-  const isMidScreen = useBreakpointValue({
-    base: false,
-    sm: true,
-    lg: false,
-  });
 
   return (
     <Flex
       direction={isWideScreen ? "row" : "column"}
-      mx="8"
+      mx={["6", "12", "20", "24"]}
       mt="7"
-      mb={["2","2","-6"]}
+      mb={["2", "2", "-6"]}
       maxW={["100%", "720px", "720px", "1242px"]}
     >
-      <Box mr={["0", "6", "6", "10", "24"]}>
+      <Box mr={["0", "6", "6", "10", "24"]} w={["100%", "50%"]}>
         <Heading
           fontSize={["22", "22", "22", "28", "34"]}
           fontWeight={900}
@@ -50,12 +45,13 @@ export function InfoCard() {
           produtos cheguem até sua casa!
         </Text>
       </Box>
-      <Image
-        src="./images/juntos-ovos-tinoco@2x.png"
-        alt="Juntos Ovos Tinoco"
-        maxW={{ base: "100%", sm: "50%", md: "50%", lg: "50%", xl: "618px" }}
-        maxH="385px"
-      />
+      <Box w={["100%", "50%"]} py={["0", "8"]}>
+        <Image
+          src="./images/juntos-ovos-tinoco@2x.png"
+          alt="Juntos Ovos Tinoco"
+          h="100%"
+        />
+      </Box>
     </Flex>
   );
 }

@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Image,
   Stack,
   Text,
   useBreakpointValue,
@@ -24,7 +23,12 @@ export default function Home() {
   });
 
   return (
-    <Flex direction="column" h="100vh" align={isWideScreen ? "center" : ""}>
+    <Flex
+      direction="column"
+      h="100vh"
+      align="center"
+      w="calc(100vw - (100vw - 100%))"
+    >
       <Head>
         <title>Ovos Tinoco</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,6 +39,8 @@ export default function Home() {
         w="100%"
         position="relative"
         h={["550px", "625px", "700px", "800px", "900px"]}
+        borderTopWidth="6px"
+        borderColor="blue.500"
       >
         <Carousel />
       </Box>
@@ -52,7 +58,7 @@ export default function Home() {
         direction={["column", "row"]}
         maxW={["100%", "740px", "760px", "1302px"]}
         mt={["0", "0", "4", "8", "12"]}
-        mx={["",""]}
+        mx={["4", "10", "14", "20"]}
       >
         <MarketingCard
           boldHeading="Galinhas 100% livres"
@@ -71,11 +77,9 @@ export default function Home() {
           isWideScreen={isWideScreen}
         />
       </Stack>
-      <Box as="div" width="100%">
-        <Box as="section" mx="7">
-          <NewsletterCardFormController />
-          <CertificationCard />
-        </Box>
+      <Box as="section" mx={["6", "12", "16", "20"]}>
+        <NewsletterCardFormController />
+        <CertificationCard />
       </Box>
       <Footer />
     </Flex>

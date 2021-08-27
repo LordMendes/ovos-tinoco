@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import styles from "./styles.module.scss";
 
 interface ArrowProps {
   disabled: boolean;
@@ -7,12 +7,12 @@ interface ArrowProps {
 }
 
 export function Arrow({ disabled, onClick, direction }: ArrowProps) {
-  const isDisabled = disabled ? " arrow--disabled" : "";
+  const isDisabled = disabled ? styles.arrowDisabled : "";
   if (direction === "left") {
     return (
       <svg
         onClick={onClick}
-        className={"arrow arrow--left" + isDisabled}
+        className={`${styles.arrow} ${styles.arrowLeft}  ${isDisabled}`}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -23,7 +23,7 @@ export function Arrow({ disabled, onClick, direction }: ArrowProps) {
   return (
     <svg
       onClick={onClick}
-      className={"arrow arrow--right" + isDisabled}
+      className={`${styles.arrow} ${styles.arrowRight}  ${isDisabled}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >

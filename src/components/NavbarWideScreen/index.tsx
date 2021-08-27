@@ -1,18 +1,39 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { HStack, Text, Link as ChakraLink } from "@chakra-ui/react";
+import Link from "next/link";
 
 export function NavbarWideScreen() {
   return (
     <HStack
-      spacing={["6", "6","10", "20"]}
+      spacing={["", "", "6", "14", "20"]}
       px={["4", "6"]}
       py="1"
       color="gray.600"
     >
-      <Text>início</Text>
-      <Text>Institucional</Text>
-      <Text>Ovos</Text>
-      <Text>Receitas</Text>
-      <Text>Contato</Text>
+      <Link href="/">
+        <ChakraLink>
+          <Text>início</Text>
+        </ChakraLink>
+      </Link>
+      <Link href="/institucional">
+        <ChakraLink>
+          <Text>Institucional</Text>
+        </ChakraLink>
+      </Link>
+      <Link href="/produtos">
+        <ChakraLink>
+          <Text>Ovos</Text>
+        </ChakraLink>
+      </Link>
+      <Link href="/receitas">
+        <ChakraLink>
+          <Text>Receitas</Text>
+        </ChakraLink>
+      </Link>
+      <Link href="/contato">
+        <ChakraLink>
+          <Text>Contato</Text>
+        </ChakraLink>
+      </Link>
     </HStack>
   );
 }
