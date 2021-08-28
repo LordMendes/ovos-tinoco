@@ -1,10 +1,4 @@
-import {
-  Box,
-  Flex,
-  Stack,
-  Text,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Flex, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import Head from "next/head";
 import { Carousel } from "../components/Carousel";
 import { CertificationCard } from "../components/CertificationCard";
@@ -41,11 +35,25 @@ export default function Home() {
         h={["550px", "625px", "700px", "800px", "900px"]}
         borderTopWidth="6px"
         borderColor="blue.500"
+        maxW="1920px"
       >
         <Carousel />
       </Box>
-      <Box bg="blue.500" w="100%" py={["1rem"]} align="center">
-        <Text color="white" fontWeight={700}>
+      <Box
+        display="flex"
+        justifyContent="center"
+        bg="blue.500"
+        w="100%"
+        alignItems="center"
+        maxW="1920px"
+        minH={["16","16","16","20","24"]}
+      >
+        <Text
+          color="white"
+          fontWeight={700}
+          align="center"
+          fontSize={["1rem", "1.25rem", "1.25rem", "1.5rem", "2rem"]}
+        >
           Acompanhe nosso instagram{" "}
           <Text as="span" color="yellow.500">
             @ovostinoco

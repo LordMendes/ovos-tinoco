@@ -75,15 +75,13 @@
   }
 }
 
-
-
 .dot.active {
   background: #000;
 }
 
 .arrow {
-  width: 30px;
-  height: 30px;
+  width: 80px;
+  height: 80px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -112,6 +110,10 @@
   .dots {
     top: 94%;
   }
+  .arrow {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 @media (max-width: 790px) {
@@ -120,6 +122,11 @@
   }
   .dots {
     top: 93%;
+  }
+
+  .arrow {
+    width: 56px;
+    height: 56px;
   }
   .numberSlide1 {
     background-size: 120% 100%;
@@ -138,6 +145,11 @@
 @media (max-width: 480px) {
   .navigationWrapper {
     height: 550px;
+  }
+
+  .arrow {
+    width: 48px;
+    height: 48px;
   }
 
   .dots {

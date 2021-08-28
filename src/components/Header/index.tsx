@@ -54,11 +54,11 @@ export function Header({ isWideScreen, onOpen }: HeaderProps) {
         <>
           <NavbarWideScreen />
           <Flex direction="row" minW="10">
-            <ChakraLink onClick={() => handleClick("instagram")}>
-              <Image src="./images/IG_Glyph_Fill.png" alt="Instagram Logo" />
-            </ChakraLink>
             <ChakraLink my="auto" onClick={() => handleClick("facebook")}>
               <Image src="./images/facebook.svg" alt="Facebook Logo" />
+            </ChakraLink>
+            <ChakraLink onClick={() => handleClick("instagram")}>
+              <Image src="./images/IG_Glyph_Fill.png" alt="Instagram Logo" />
             </ChakraLink>
           </Flex>
         </>

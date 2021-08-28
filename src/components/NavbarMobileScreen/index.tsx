@@ -113,15 +113,15 @@ export function NavbarMobileScreen() {
                 Siga-nos em nossas redes sociais
               </Text>
               <Flex direction="row">
+                <ChakraLink onClick={() => handleClick("facebook")} my="auto">
+                  <Image src="./images/facebook.svg" alt="Facebook Logo" />
+                </ChakraLink>
                 <ChakraLink onClick={() => handleClick("instagram")}>
                   <Image
                     src="./images/IG_Glyph_Fill.png"
                     alt="Instagram Logo"
                     mr="2"
                   />
-                </ChakraLink>
-                <ChakraLink onClick={() => handleClick("facebook")} my="auto">
-                  <Image src="./images/facebook.svg" alt="Facebook Logo" />
                 </ChakraLink>
               </Flex>
             </Flex>
