@@ -1,49 +1,61 @@
-// [class^="numberSlide"],
-// [class*=" number-slide"] {
-//   background: grey;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: 50px;
-//   color: #fff;
-//   font-weight: 500;
-//   height: 200px;
-// }
-
 .keenSlider {
   height: 100%;
+}
 
-  .numberSlide1 {
-    background-image: url("/images/Slide-OvosRicos.png");
-    background-size: 100% 100%;
-    background-color: #cccccc;
-    background-position: center;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.numberSlide1 {
+  background-image: url("/images/Slide-OvosRicos.png");
+  background-size: 100% 100%;
+  background-color: #cccccc;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 200px;
+}
 
-  .numberSlide2 {
-    background-image: url("/images/Slide-receita.png");
-    background-size: 100% 100%;
-    background-color: #cccccc;
-    background-position: center;
-  }
+.numberSlide2 {
+  background-image: url("/images/Slide-receita.png");
+  background-size: 100% 100%;
+  background-color: #cccccc;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 200px;
+}
 
-  .numberSlide3 {
-    background-image: url("/images/Slide-OvosRicos.png");
-    background-size: 100% 100%;
-    background-color: #cccccc;
-    background-position: center;
-  }
+.numberSlide3 {
+  background-image: url("/images/Slide-OvosRicos.png");
+  background-size: 100% 100%;
+  background-color: #cccccc;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 200px;
+}
 
-  .numberSlide4 {
-    background-image: url("/images/Slide-GSaudaveis.png");
-    background-size: 100% 100%;
-    background-color: #cccccc;
-    background-position: center;
-  }
+.numberSlide4 {
+  background-image: url("/images/Slide-GSaudaveis.png");
+  background-size: 100% 100%;
+  background-color: #cccccc;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 200px;
 }
 
 .navigationWrapper {
@@ -70,9 +82,10 @@
   margin: 0 5px;
   padding: 5px;
   cursor: pointer;
-  &:focus {
-    outline: none;
-  }
+}
+
+.dot:focus {
+  outline: none;
 }
 
 .dot.active {
@@ -113,6 +126,15 @@
   .arrow {
     width: 64px;
     height: 64px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .navigationWrapper {
+    height: 625px;
+  }
+  .dots {
+    top: 93%;
   }
 }
 

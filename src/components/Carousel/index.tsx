@@ -1,6 +1,7 @@
 import { Arrow } from "./components/Arrow";
 
-import styled from "./styles.module.scss";
+import "keen-slider/keen-slider.min.css";
+import styles from "./styles.module.css";
 
 interface CarouselProps {
   sliderRef: any;
@@ -11,12 +12,12 @@ interface CarouselProps {
 export function Carousel({ sliderRef, slider, currentSlide }: CarouselProps) {
   return (
     <>
-      <div className="navigation-wrapper">
-        <div ref={sliderRef} className="keen-slider">
-          <div className="keen-slider__slide number-slide1" />
-          <div className="keen-slider__slide number-slide2" />
-          <div className="keen-slider__slide number-slide3" />
-          <div className="keen-slider__slide number-slide4" />
+      <div className={styles.navigationWrapper}>
+        <div ref={sliderRef} className={`keen-slider ${styles.keenSlider}`}>
+          <div className={`keen-slider__slide ${styles.numberSlide1}`} />
+          <div className={`keen-slider__slide ${styles.numberSlide2}`} />
+          <div className={`keen-slider__slide ${styles.numberSlide3}`} />
+          <div className={`keen-slider__slide ${styles.numberSlide4}`} />
         </div>
         {slider && (
           <>
@@ -34,7 +35,7 @@ export function Carousel({ sliderRef, slider, currentSlide }: CarouselProps) {
         )}
       </div>
       {slider && (
-        <div className="dots">
+        <div className={styles.dots}>
           {[...Array(slider.details().size).keys()].map((idx) => {
             return (
               <button
@@ -42,7 +43,10 @@ export function Carousel({ sliderRef, slider, currentSlide }: CarouselProps) {
                 onClick={() => {
                   slider.moveToSlideRelative(idx);
                 }}
-                className={"dot" + (currentSlide === idx ? " active" : "")}
+                className={
+                  `${styles.dot}` +
+                  (currentSlide === idx ? ` ${styles.active}` : "")
+                }
               />
             );
           })}

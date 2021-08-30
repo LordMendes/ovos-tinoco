@@ -4,9 +4,6 @@ import { theme } from "../styles/theme";
 import Fonts from "../styles/fonts";
 import { NavbarContextProvider } from "../contexts/NavbarDropdownMenuContext";
 
-import "keen-slider/keen-slider.min.css"
-import "../styles/styles.css"
-
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <NavbarContextProvider>
