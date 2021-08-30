@@ -18,7 +18,7 @@ export function Footer() {
     sm: true,
   });
   return (
-    <Box as="footer" w="100%">
+    <Box as="footer" w="100%" maxW="1920px">
       <Box
         backgroundImage={[
           "url('./images/FooterImage.png')",

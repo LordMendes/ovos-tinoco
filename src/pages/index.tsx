@@ -1,14 +1,14 @@
 import { Box, Flex, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import Head from "next/head";
-import { Carousel } from "../components/Carousel";
 import { CertificationCard } from "../components/CertificationCard";
 import { Footer } from "../components/Footer";
 import { InfoCard } from "../components/InfoCard";
 import { MarketingCard } from "../components/MarketingCard";
 import { NavbarMobileScreen } from "../components/NavbarMobileScreen";
 import { RecipeInviteCard } from "../components/RecipeInviteCard";
-import { HeaderController } from "../controllers/HeaderController";
-import { NewsletterCardFormController } from "../controllers/NewsletterCardFormController";
+import { HeaderController } from "../components/Header/HeaderController";
+import { NewsletterCardFormController } from "../components/NewsletterCardForm/NewsletterCardFormController";
+import { CarouselController } from "../components/Carousel/CarouselController";
 
 export default function Home() {
   const isWideScreen = useBreakpointValue({
@@ -37,7 +37,7 @@ export default function Home() {
         borderColor="blue.500"
         maxW="1920px"
       >
-        <Carousel />
+        <CarouselController />
       </Box>
       <Box
         display="flex"
@@ -46,7 +46,7 @@ export default function Home() {
         w="100%"
         alignItems="center"
         maxW="1920px"
-        minH={["16","16","16","20","24"]}
+        minH={["16", "16", "16", "20", "24"]}
       >
         <Text
           color="white"
