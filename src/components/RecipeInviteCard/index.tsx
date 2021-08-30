@@ -1,4 +1,5 @@
-import { Box, Image, Text, Button } from "@chakra-ui/react";
+import { Box, Image, Text, Button, Link as ChakraLink } from "@chakra-ui/react";
+import Link from "next/link";
 
 export function RecipeInviteCard() {
   return (
@@ -31,17 +32,20 @@ export function RecipeInviteCard() {
         >
           Clique aqui e <br /> confira receitas deliciosas!
         </Text>
-        <Button
-          fontWeight={300}
-          p={["2", "4", "4", "6", "7"]}
-          bg="white"
-          fontSize={["12", "14", "14", "16", "22"]}
-          color="blue.500"
-          h={["22px", "8", "2", "8"]}
-          mt={["0", "3", "3", "4"]}
-        >
-          Acesse agora
-        </Button>
+        <Link href="/receitas" passHref>
+          <Button
+            as="a"
+            fontWeight={300}
+            p={["2", "4", "4", "6", "7"]}
+            bg="white"
+            fontSize={["12", "14", "14", "16", "22"]}
+            color="blue.500"
+            h={["22px", "8", "2", "8"]}
+            mt={["0", "3", "3", "4"]}
+          >
+            Acesse agora
+          </Button>
+        </Link>
       </Box>
     </Box>
   );
