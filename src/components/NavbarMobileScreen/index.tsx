@@ -42,7 +42,7 @@ export function NavbarMobileScreen() {
           </DrawerHeader>
           <DrawerBody px="14px">
             <VStack>
-              <Link href="/">
+              <Link href="/" passHref>
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     início
@@ -55,7 +55,7 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Link href="/institucional">
+              <Link href="/institucional" passHref>
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     Institucional
@@ -68,7 +68,7 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Link href="/produtos">
+              <Link href="/produtos" passHref>
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     Ovos
@@ -81,7 +81,7 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Link href="/receitas">
+              <Link href="/receitas" passHref>
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     Receitas
@@ -94,7 +94,7 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Link href="/contato">
+              <Link href="/contato" passHref>
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     Contato
@@ -113,7 +113,11 @@ export function NavbarMobileScreen() {
                 Siga-nos em nossas redes sociais
               </Text>
               <Flex direction="row">
-                <ChakraLink onClick={() => handleClick("facebook")} my="auto">
+                <ChakraLink
+                  as="button"
+                  onClick={() => handleClick("facebook")}
+                  my="auto"
+                >
                   <Image src="./images/facebook.svg" alt="Facebook Logo" />
                 </ChakraLink>
                 <ChakraLink onClick={() => handleClick("instagram")}>

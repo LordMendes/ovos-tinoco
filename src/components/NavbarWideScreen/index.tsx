@@ -9,27 +9,27 @@ export function NavbarWideScreen() {
       py="1"
       color="gray.600"
     >
-      <Link href="/">
+      <Link href="/" passHref>
         <ChakraLink>
           <Text>início</Text>
         </ChakraLink>
       </Link>
-      <Link href="/institucional">
+      <Link href="/institucional" passHref>
         <ChakraLink>
           <Text>Institucional</Text>
         </ChakraLink>
       </Link>
-      <Link href="/produtos">
+      <Link href="/produtos" passHref>
         <ChakraLink>
           <Text>Ovos</Text>
         </ChakraLink>
       </Link>
-      <Link href="/receitas">
+      <Link href="/receitas" passHref>
         <ChakraLink>
           <Text>Receitas</Text>
         </ChakraLink>
       </Link>
-      <Link href="/contato">
+      <Link href="/contato" passHref>
         <ChakraLink>
           <Text>Contato</Text>
         </ChakraLink>
