@@ -47,7 +47,7 @@ export function InfoCard() {
       </Box>
       <Box w={["100%", "100%", "50%"]} py={["0", "0", "8"]}>
         <Image
-          src="./images/juntos-ovos-tinoco@2x.png"
+          src="./static/images/juntos-ovos-tinoco@2x.png"
           alt="Juntos Ovos Tinoco"
           h="100%"
           maxH={["250px", "400px", "100%"]}

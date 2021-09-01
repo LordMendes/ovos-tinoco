@@ -3,7 +3,7 @@
 }
 
 .numberSlide1 {
-  background-image: url("/images/Slide-OvosRicos.png");
+  background-image: url("/static/images/Slide-OvosRicos.png");
   background-size: 100% 100%;
   background-color: #cccccc;
   background-position: center;
@@ -17,7 +17,7 @@
 }
 
 .numberSlide2 {
-  background-image: url("/images/Slide-receita.png");
+  background-image: url("/static/images/Slide-receita.png");
   background-size: 100% 100%;
   background-color: #cccccc;
   background-position: center;
@@ -31,7 +31,7 @@
 }
 
 .numberSlide3 {
-  background-image: url("/images/Slide-OvosRicos.png");
+  background-image: url("/static/images/Slide-OvosRicos.png");
   background-size: 100% 100%;
   background-color: #cccccc;
   background-position: center;
@@ -45,7 +45,7 @@
 }
 
 .numberSlide4 {
-  background-image: url("/images/Slide-GSaudaveis.png");
+  background-image: url("/static/images/Slide-GSaudaveis.png");
   background-size: 100% 100%;
   background-color: #cccccc;
   background-position: center;

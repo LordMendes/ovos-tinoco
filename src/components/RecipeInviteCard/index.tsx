@@ -12,7 +12,7 @@ export function RecipeInviteCard() {
     >
       <Box>
         <Image
-          src="./images/Grupo-265@2x.png"
+          src="./static/images/Grupo-265@2x.png"
           alt="Veja Nossas Receitas"
           w="100%"
         />

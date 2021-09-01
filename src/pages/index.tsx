@@ -72,7 +72,7 @@ export default function Home() {
           boldHeading="Galinhas 100% livres"
           lightHeading="de hormônios e antibióticos"
           imageTitle="Galinha"
-          imageURL="./images/banner-vertical-ovos-antibioticos@3x.png"
+          imageURL="./static/images/banner-vertical-ovos-antibioticos@3x.png"
           imagePosition="bottom"
           isWideScreen={isWideScreen}
         />
@@ -80,7 +80,7 @@ export default function Home() {
           boldHeading="Conheça toda"
           lightHeading="Nossa linha de ovos"
           imageTitle="Caixas de ovos"
-          imageURL="./images/banner-vertical-ovos-produtos@3x.png"
+          imageURL="./static/images/banner-vertical-ovos-produtos@3x.png"
           imagePosition="top"
           isWideScreen={isWideScreen}
         />
