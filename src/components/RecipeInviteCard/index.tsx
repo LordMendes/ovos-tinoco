@@ -1,4 +1,4 @@
-import { Box, Image, Text, Button, Link as ChakraLink } from "@chakra-ui/react";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
 
 export function RecipeInviteCard() {

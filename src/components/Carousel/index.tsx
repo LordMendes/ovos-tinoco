@@ -1,12 +1,14 @@
+import { RefObject } from "react";
+import KeenSlider from "keen-slider";
 import { Arrow } from "./components/Arrow";
 
 import "keen-slider/keen-slider.min.css";
 import styles from "./styles.module.css";
 
 interface CarouselProps {
-  sliderRef: any;
-  slider: any;
-  currentSlide: any;
+  sliderRef: RefObject<HTMLDivElement>;
+  slider: KeenSlider;
+  currentSlide: number;
 }
 
 export function Carousel({ sliderRef, slider, currentSlide }: CarouselProps) {
@@ -22,13 +24,13 @@ export function Carousel({ sliderRef, slider, currentSlide }: CarouselProps) {
         {slider && (
           <>
             <Arrow
-              onClick={(e) => e.stopPropagation() || slider.prev()}
+              onClick={(e: Event | any) => e.stopPropagation() || slider.prev()}
               disabled={currentSlide === 0}
               direction="left"
             />
             <Arrow
               direction="right"
-              onClick={(e) => e.stopPropagation() || slider.next()}
+              onClick={(e: Event | any) => e.stopPropagation() || slider.next()}
               disabled={currentSlide === slider.details().size - 1}
             />
           </>

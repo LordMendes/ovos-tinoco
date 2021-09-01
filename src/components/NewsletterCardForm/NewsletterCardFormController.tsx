@@ -21,7 +21,7 @@ export function NewsletterCardFormController() {
   const { errors, isSubmitting } = formState;
 
   const handleSignNewsletter: SubmitHandler<NewsLetterFormData> = async (
-    values
+    values: NewsLetterFormData
   ) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(values);

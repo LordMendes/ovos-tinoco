@@ -1,3 +1,5 @@
+import { FormEventHandler } from "react";
+import { FieldError, FieldValues, SubmitHandler, UseFormRegister } from "react-hook-form";
 import {
   Flex,
   Heading,
@@ -9,8 +11,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Input } from "../Form/Input";
-import { FieldError } from "react-hook-form";
-import { FormEventHandler } from "react";
 
 type NewsLetterFormData = {
   userName: string;
@@ -19,7 +19,7 @@ type NewsLetterFormData = {
 
 type handleSignNewsletterType = (
   values: NewsLetterFormData
-) => any | Promise<any>;
+) => SubmitHandler<NewsLetterFormData>;
 
 interface NewsletterCardFormProps {
   errors: {
@@ -27,8 +27,8 @@ interface NewsletterCardFormProps {
     email?: FieldError;
   };
   isSubmitting: boolean;
-  handleSubmit: (fn: handleSignNewsletterType) => FormEventHandler;
-  register: (field: string) => void;
+  handleSubmit: (fn: SubmitHandler<NewsLetterFormData>) => FormEventHandler;
+  register: UseFormRegister<FieldValues>;
   handleSignNewsletter: handleSignNewsletterType;
 }
 
