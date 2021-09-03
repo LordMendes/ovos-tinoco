@@ -64,15 +64,15 @@ export default function Home() {
       <RecipeInviteCard />
       <Stack
         direction={["column", "row"]}
-        maxW={["100%", "740px", "760px", "1302px"]}
-        mt={["0", "0", "4", "8", "12"]}
+        maxW="1280px"
+        mt={["4", "8", "16", "8", "12"]}
         mx={["4", "10", "14", "20"]}
       >
         <MarketingCard
           boldHeading="Galinhas 100% livres"
           lightHeading="de hormônios e antibióticos"
           imageTitle="Galinha"
-          imageURL="./static/images/banner-vertical-ovos-antibioticos@3x.png"
+          imageURL="./static/images/banner-vertical-ovos-antibioticos@2x.png"
           imagePosition="bottom"
           isWideScreen={isWideScreen}
         />
@@ -80,7 +80,7 @@ export default function Home() {
           boldHeading="Conheça toda"
           lightHeading="Nossa linha de ovos"
           imageTitle="Caixas de ovos"
-          imageURL="./static/images/banner-vertical-ovos-produtos@3x.png"
+          imageURL="./static/images/banner-vertical-ovos-produtos@2x.png"
           imagePosition="top"
           isWideScreen={isWideScreen}
         />

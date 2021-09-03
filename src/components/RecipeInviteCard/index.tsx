@@ -1,51 +1,58 @@
-import { Box, Image, Text, Button } from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
+import Image from "next/image";
+import bgRecipeImg from "../../assets/images/receitas-ovo-tinoxo.png";
+import batedorImg from "../../assets/images/batedor-ovos.png";
 
 export function RecipeInviteCard() {
   return (
     <Box
-      mr={["6", "12", "20", "24"]}
+      mx={["6", "12", "20", "24"]}
       position="relative"
-      mb="6"
-      w={["", "", "100%"]}
-      maxW={["96%", "94%", "94%", "94%", "1358px"]}
+      mt={["4", "8", "16","20"]}
+      w="100%"
+      align="center"
     >
-      <Box>
+      <Box mx={["6", "12", "20", "24"]} maxW={1242} position="relative">
         <Image
-          src="./static/images/Grupo-265@2x.png"
+          src={bgRecipeImg}
           alt="Veja Nossas Receitas"
-          w="100%"
+          layout="responsive"
         />
-      </Box>
-      <Box
-        position="absolute"
-        left="32%"
-        top={["32%", "25%", "32%"]}
-        w={["40%", "50%", "40%"]}
-        minW="142px"
-      >
-        <Text
-          lineHeight="1"
-          fontSize={["18", "29", "36", "50", "66"]}
-          fontWeight={700}
-          color="white"
+        <Box position="absolute" top="-25%" left="-10%" w="37%">
+          <Image src={batedorImg} alt="Batedor de Ovos" layout="responsive" />
+        </Box>
+        <Box
+          position="absolute"
+          w="100%"
+          minW="142px"
+          align="left"
+          top={["10%", "10%", "15%"]}
+          left="25%"
         >
-          Clique aqui e <br /> confira receitas deliciosas!
-        </Text>
-        <Link href="/receitas" passHref>
-          <Button
-            as="a"
-            fontWeight={300}
-            p={["2", "4", "4", "6", "7"]}
-            bg="white"
-            fontSize={["12", "14", "14", "16", "22"]}
-            color="blue.500"
-            h={["22px", "8", "2", "8"]}
-            mt={["0", "3", "3", "4"]}
+          <Text
+            lineHeight="1"
+            fontSize={["18", "26", "36", "50", "66"]}
+            fontWeight={700}
+            color="white"
           >
-            Acesse agora
-          </Button>
-        </Link>
+            Clique aqui e <br /> confira receitas <br /> deliciosas!
+          </Text>
+          <Link href="/receitas" passHref>
+            <Button
+              as="a"
+              fontWeight={300}
+              p={["2", "4", "4", "6", "7"]}
+              bg="white"
+              fontSize={["12", "14", "14", "16", "22"]}
+              color="blue.500"
+              h={["6", "8", "2", "8"]}
+              mt={["0", "2", "3", "3", "4"]}
+            >
+              Acesse agora
+            </Button>
+          </Link>
+        </Box>
       </Box>
     </Box>
   );
