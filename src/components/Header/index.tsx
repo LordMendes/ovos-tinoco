@@ -8,22 +8,19 @@ import {
 } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavbarWideScreen } from "../NavbarWideScreen";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
-  isWideScreen: boolean;
+  isWideScreen: boolean | undefined;
   onOpen: () => void;
 }
 
 export function Header({ isWideScreen, onOpen }: HeaderProps) {
-  const { push } = useRouter();
-
   function handleClick(socialMedia: string) {
     if (socialMedia === "facebook") {
-      return push("https://www.facebook.com");
+      return (window.location.href = "https://www.facebook.com");
     }
-    return push("https://www.instagram.com");
+    return (window.location.href = "https://www.instagram.com");
   }
   return (
     <HStack
@@ -34,7 +31,7 @@ export function Header({ isWideScreen, onOpen }: HeaderProps) {
       w="100%"
       maxW="1242px"
     >
-      <Link href="/">
+      <Link to="/">
         <ChakraLink>
           <Image src="./static/images/Logo.svg" alt="Logo" />
         </ChakraLink>
@@ -58,7 +55,10 @@ export function Header({ isWideScreen, onOpen }: HeaderProps) {
               <Image src="./static/images/facebook.svg" alt="Facebook Logo" />
             </ChakraLink>
             <ChakraLink onClick={() => handleClick("instagram")}>
-              <Image src="./static/images/IG_Glyph_Fill.png" alt="Instagram Logo" />
+              <Image
+                src="./static/images/IG_Glyph_Fill.png"
+                alt="Instagram Logo"
+              />
             </ChakraLink>
           </Flex>
         </>

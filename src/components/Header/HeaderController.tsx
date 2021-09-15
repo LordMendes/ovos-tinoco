@@ -10,5 +10,7 @@ export function HeaderController() {
 
   const { onOpen } = useNavbarDrawer();
 
-  return <Header isWideScreen={isWideScreen} onOpen={onOpen} />;
+  return (
+    <Header isWideScreen={isWideScreen} onOpen={onOpen} />
+  );
 }

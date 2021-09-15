@@ -1,5 +1,10 @@
 import { FormEventHandler } from "react";
-import { FieldError, FieldValues, SubmitHandler, UseFormRegister } from "react-hook-form";
+import {
+  FieldError,
+  FieldValues,
+  SubmitHandler,
+  UseFormRegister,
+} from "react-hook-form";
 import {
   Flex,
   Heading,
@@ -104,7 +109,7 @@ export function NewsletterCardForm({
               Preencha os campos abaixo e receba as novidades!
             </Text>
             <Input
-              name="userName"
+              fieldName="userName"
               placeholder="Nome"
               type="text"
               borderRadius="4"
@@ -113,7 +118,7 @@ export function NewsletterCardForm({
               error={errors.userName}
             />
             <Input
-              name="email"
+              fieldName="email"
               placeholder="E-mail"
               type="email"
               borderRadius="4"

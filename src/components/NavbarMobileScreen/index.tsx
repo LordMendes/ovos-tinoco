@@ -13,18 +13,16 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 import { useNavbarDrawer } from "../../contexts/NavbarDropdownMenuContext";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { Link } from "react-router-dom";
 
 export function NavbarMobileScreen() {
   const { isOpen, onClose } = useNavbarDrawer();
-  const { push } = useRouter();
 
   function handleClick(socialMedia: string) {
     if (socialMedia === "facebook") {
-      return push("https://www.facebook.com");
+      return (window.location.href = "https://www.facebook.com");
     }
-    return push("https://www.instagram.com");
+    return (window.location.href = "https://www.instagram.com");
   }
   return (
     <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
@@ -42,7 +40,7 @@ export function NavbarMobileScreen() {
           </DrawerHeader>
           <DrawerBody px="14px">
             <VStack>
-              <Link href="/" passHref>
+              <Link to="/">
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     início
@@ -55,7 +53,7 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Link href="/institucional" passHref>
+              <Link to="/institucional">
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     Institucional
@@ -68,7 +66,7 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Link href="/produtos" passHref>
+              <Link to="/produtos">
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     Ovos
@@ -81,7 +79,7 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Link href="/receitas" passHref>
+              <Link to="/receitas">
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     Receitas
@@ -94,7 +92,7 @@ export function NavbarMobileScreen() {
                 opacity="1"
                 borderColor="blue.500"
               />
-              <Link href="/contato" passHref>
+              <Link to="/contato">
                 <ChakraLink>
                   <Text ml="auto !important" color="blue.500" fontSize="22">
                     Contato
@@ -118,7 +116,10 @@ export function NavbarMobileScreen() {
                   onClick={() => handleClick("facebook")}
                   my="auto"
                 >
-                  <Image src="./static/images/facebook.svg" alt="Facebook Logo" />
+                  <Image
+                    src="./static/images/facebook.svg"
+                    alt="Facebook Logo"
+                  />
                 </ChakraLink>
                 <ChakraLink onClick={() => handleClick("instagram")}>
                   <Image

@@ -1,25 +1,43 @@
-import Head from "next/head";
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, Heading, Text } from "@chakra-ui/react";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { HeaderController } from "../../components/Header/HeaderController";
 import { Footer } from "../../components/Footer";
+import { SubtitleImageCard } from "../../components/SubtitleImageCard";
+import { HeaderFooter } from "../../components/HeaderFooter";
+import { ContactForm } from "./components/ContactForm";
 
-export default function InstitutionalPage() {
+export default function ContactPage() {
   return (
-    <Flex
-      direction="column"
-      h="100vh"
-      align="center"
-      w="calc(100vw - (100vw - 100%))"
-    >
-      <Head>
-        <title>Ovos Tinoco | Contato</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
+    <Flex direction="column" align="center" w="calc(100vw - (100vw - 100%))">
       <NavbarMobileScreen />
       <HeaderController />
-      <Box h="100%">
-        ... aguarde
+      <Box
+        as="main"
+        h="100%"
+        width="100%"
+        borderTopWidth="6px"
+        borderColor="blue.500"
+        maxW="1920px"
+        mb="28"
+      >
+        <SubtitleImageCard
+          title="CONTATO / SAC"
+          imageURL="./static/images/banner-contato-ovos-tinoco.png"
+        />
+        <HeaderFooter />
+        <Heading
+          color="blue.500"
+          fontSize={["1.8rem", "2.125rem", "2.25rem", "2.375rem", "2.5rem"]}
+          mx={["4", null]}
+          align="center"
+          mt={["4", "8", "16", "20", "28"]}
+        >
+          Dúvidas, reclamações, elogios e comercial.
+        </Heading>
+        <Text align="center" color="blue.500" mt="2" fontSize={["14", "1rem"]}>
+          Por favor, preencha todos os campos abaixo.
+        </Text>
+        <ContactForm />
       </Box>
       <Footer />
     </Flex>

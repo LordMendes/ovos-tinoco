@@ -7,12 +7,64 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 
-export function InfoCard() {
+interface InfoCardProps {
+  imageURL: string;
+  title: string;
+  subtitle: string;
+  paragraph: string;
+  isRight?: boolean;
+}
+
+export function InfoCard({
+  imageURL,
+  title,
+  subtitle,
+  paragraph,
+  isRight,
+}: InfoCardProps) {
   const isWideScreen = useBreakpointValue({
     base: false,
     md: true,
   });
-
+  if (isRight && isWideScreen) {
+    return (
+      <Flex
+        direction={isWideScreen ? "row" : "column"}
+        mx={["6", "12", "20", "24"]}
+        mt="7"
+        mb={["2", "2", "-6"]}
+        maxW={["100%", "720px", "720px", "1242px"]}
+      >
+        <Box w={["100%", "100%", "50%"]} py={["0", "0", "8"]}>
+          <Image
+            src={imageURL}
+            alt="Juntos Ovos Tinoco"
+            h="100%"
+            maxH={["250px", "400px", "100%"]}
+          />
+        </Box>
+        <Box ml={["0", "6", "6", "10", "24"]} w={["100%", "100%", "50%"]}>
+          <Heading
+            fontSize={["22", "22", "22", "28", "34"]}
+            fontWeight={900}
+            mt={["0", "6"]}
+          >
+            {title}
+          </Heading>
+          <Heading
+            fontWeight={300}
+            fontSize={["22", "22", "22", "28", "32"]}
+            mt="1"
+          >
+            {subtitle}
+          </Heading>
+          <Text fontWeight={300} my="4" fontSize={["xl", "md", "md", "xl"]}>
+            {paragraph}
+          </Text>
+        </Box>
+      </Flex>
+    );
+  }
   return (
     <Flex
       direction={isWideScreen ? "row" : "column"}
@@ -27,27 +79,22 @@ export function InfoCard() {
           fontWeight={900}
           mt={["0", "6"]}
         >
-          HÁ 75 ANOS PRESENTE NOS{" "}
+          {title}
         </Heading>
         <Heading
           fontWeight={300}
           fontSize={["22", "22", "22", "28", "32"]}
           mt="1"
         >
-          SEUS MELHORES MOMENTOS
+          {subtitle}
         </Heading>
         <Text fontWeight={300} my="4" fontSize={["xl", "md", "md", "xl"]}>
-          É uma honra fazer parte do seu dia a dia e um prazer estar presente
-          nos seus melhores momentos há 75 anos! A sua satisfação e confiança é
-          o que nos move todos os dias! Por isso, a quialidade é o nosso maior
-          compromisso com você! Nossos produtos contam com minciosos processos
-          de seleção, passando por processos específicos para que só os melhores
-          produtos cheguem até sua casa!
+          {paragraph}
         </Text>
       </Box>
       <Box w={["100%", "100%", "50%"]} py={["0", "0", "8"]}>
         <Image
-          src="./static/images/juntos-ovos-tinoco@2x.png"
+          src={imageURL}
           alt="Juntos Ovos Tinoco"
           h="100%"
           maxH={["250px", "400px", "100%"]}

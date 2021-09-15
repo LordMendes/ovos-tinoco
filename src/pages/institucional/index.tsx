@@ -1,22 +1,17 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Flex, Box, Heading } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { HeaderController } from "../../components/Header/HeaderController";
 import { Footer } from "../../components/Footer";
+import { SubtitleImageCard } from "../../components/SubtitleImageCard";
+import { InfoCard } from "../../components/InfoCard";
+import { infoCardTexts } from "../../assets/variables/infoCardTexts";
+import { HeaderFooter } from "../../components/HeaderFooter";
 
 export default function InstitutionalPage() {
+  const [firstInfo] = infoCardTexts;
+
   return (
-    <Flex
-      direction="column"
-      h="100vh"
-      align="center"
-      w="calc(100vw - (100vw - 100%))"
-    >
-      <Head>
-        <title>Ovos Tinoco | Institucional</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
+    <Flex direction="column" align="center" w="calc(100vw - (100vw - 100%))">
       <NavbarMobileScreen />
       <HeaderController />
       <Box
@@ -25,21 +20,35 @@ export default function InstitutionalPage() {
         width="100%"
         borderTopWidth="6px"
         borderColor="blue.500"
+        maxW="1920px"
+        mb="28"
       >
-        <Box
-          backgroundImage="./static/images/Institucional.png"
-          bgSize="100% 100%"
-          w="100%"
-          h="100px"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Heading bgColor="yellow.500" color="blue.500" p="2">
-            A GRANJA TINOCO
-          </Heading>
-        </Box>
-        ... aguarde
+        <SubtitleImageCard
+          title="A GRANJA TINOCO"
+          imageURL="./static/images/Institucional.png"
+        />
+        <HeaderFooter />
+        <Flex direction="column" align="center">
+          <InfoCard
+            imageURL="./static/images/5.png"
+            title={firstInfo.title}
+            subtitle={firstInfo.subtitle}
+            paragraph={firstInfo.paragraph}
+          />
+          <InfoCard
+            imageURL="./static/images/5.png"
+            title={firstInfo.title}
+            subtitle={firstInfo.subtitle}
+            paragraph={firstInfo.paragraph}
+            isRight
+          />
+          <InfoCard
+            imageURL="./static/images/5.png"
+            title={firstInfo.title}
+            subtitle={firstInfo.subtitle}
+            paragraph={firstInfo.paragraph}
+          />
+        </Flex>
       </Box>
       <Footer />
     </Flex>

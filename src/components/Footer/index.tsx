@@ -9,8 +9,7 @@ import {
   VStack,
   Link as ChakraLink,
 } from "@chakra-ui/react";
-import React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   const isWideScreen = useBreakpointValue({
@@ -59,29 +58,29 @@ export function Footer() {
               fontSize={["", "", "", "", "24"]}
             >
               <Stack direction="column">
-                <Link href="/">
+                <Link to="/">
                   <ChakraLink>
                     <Text>início</Text>
                   </ChakraLink>
                 </Link>
-                <Link href="/institucional">
+                <Link to="/institucional">
                   <ChakraLink>
                     <Text>Institucional</Text>
                   </ChakraLink>
                 </Link>
-                <Link href="/produtos">
+                <Link to="/produtos">
                   <ChakraLink>
                     <Text>Produtos</Text>
                   </ChakraLink>
                 </Link>
               </Stack>
               <Stack direction="column">
-                <Link href="/receitas">
+                <Link to="/receitas">
                   <ChakraLink>
                     <Text>Receitas</Text>
                   </ChakraLink>
                 </Link>
-                <Link href="/contato">
+                <Link to="/contato">
                   <ChakraLink>
                     <Text>Contato</Text>
                   </ChakraLink>

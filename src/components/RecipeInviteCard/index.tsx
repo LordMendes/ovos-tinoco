@@ -1,6 +1,5 @@
-import { Box, Text, Button } from "@chakra-ui/react";
-import Link from "next/link";
-import Image from "next/image";
+import { Box, Text, Button, Image } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import bgRecipeImg from "../../assets/images/receitas-ovo-tinoxo.png";
 import batedorImg from "../../assets/images/batedor-ovos.png";
 
@@ -9,7 +8,7 @@ export function RecipeInviteCard() {
     <Box
       mx={["6", "12", "20", "24"]}
       position="relative"
-      mt={["4", "8", "16","20"]}
+      mt={["4", "8", "16", "20"]}
       w="100%"
       align="center"
     >
@@ -17,10 +16,9 @@ export function RecipeInviteCard() {
         <Image
           src={bgRecipeImg}
           alt="Veja Nossas Receitas"
-          layout="responsive"
         />
         <Box position="absolute" top="-25%" left="-10%" w="37%">
-          <Image src={batedorImg} alt="Batedor de Ovos" layout="responsive" />
+          <Image src={batedorImg} alt="Batedor de Ovos" />
         </Box>
         <Box
           position="absolute"
@@ -38,7 +36,7 @@ export function RecipeInviteCard() {
           >
             Clique aqui e <br /> confira receitas <br /> deliciosas!
           </Text>
-          <Link href="/receitas" passHref>
+          <Link to="/receitas">
             <Button
               as="a"
               fontWeight={300}

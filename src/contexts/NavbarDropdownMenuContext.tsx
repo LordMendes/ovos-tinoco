@@ -1,5 +1,5 @@
 import { useDisclosure, UseDisclosureReturn } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+import { useLocation } from "react-router-dom";
 import { createContext, ReactNode, useContext, useEffect } from "react";
 
 type NavbarDropdownMenuContextData = UseDisclosureReturn;
@@ -17,11 +17,11 @@ export function NavbarContextProvider({
 }: NavbarContextProviderProps) {
   const disclosure = useDisclosure();
 
-  const router = useRouter();
+  const location = useLocation();
 
   useEffect(() => {
     disclosure.onClose();
-  }, [router.asPath])
+  }, [location.pathname]);
 
   return (
     <NavbarDropdownMenuContext.Provider value={disclosure}>

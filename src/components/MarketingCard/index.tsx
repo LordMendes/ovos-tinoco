@@ -6,7 +6,7 @@ interface MarketingCardProps {
   imageURL: string;
   imageTitle: string;
   imagePosition: string;
-  isWideScreen: boolean;
+  isWideScreen: boolean | undefined;
 }
 
 export function MarketingCard({
