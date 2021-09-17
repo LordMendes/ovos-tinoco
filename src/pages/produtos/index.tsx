@@ -18,7 +18,13 @@ export default function ProductPage() {
     sm: true,
   });
   return (
-    <Flex direction="column" align="center" w="calc(100vw - (100vw - 100%))">
+    <Flex
+      direction="column"
+      align="center"
+      w="calc(100vw - (100vw - 100%))"
+      maxW="1440px"
+      mx="auto"
+    >
       <NavbarMobileScreen />
       <HeaderController />
       <Box

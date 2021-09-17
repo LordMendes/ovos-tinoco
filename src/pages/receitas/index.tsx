@@ -14,7 +14,13 @@ export default function RecipePage() {
     sm: true,
   });
   return (
-    <Flex direction="column" align="center" w="calc(100vw - (100vw - 100%))">
+    <Flex
+      direction="column"
+      align="center"
+      w="calc(100vw - (100vw - 100%))"
+      maxW="1440px"
+      mx="auto"
+    >
       <NavbarMobileScreen />
       <HeaderController />
       <Box
@@ -43,7 +49,7 @@ export default function RecipePage() {
             mt="10"
             px="8"
             w="100%"
-            maxW='1440px'
+            maxW="1440px"
           >
             {array.map((item) => {
               return <RecipeItemCard />;
