@@ -1,4 +1,4 @@
-import { Flex, Box, Heading, Text } from "@chakra-ui/react";
+import { Flex, Box, Heading, Text, useBreakpointValue } from "@chakra-ui/react";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { HeaderController } from "../../components/Header/HeaderController";
 import { Footer } from "../../components/Footer";
@@ -7,6 +7,10 @@ import { HeaderFooter } from "../../components/HeaderFooter";
 import { ContactForm } from "./components/ContactForm";
 
 export default function ContactPage() {
+  const isWideScreen = useBreakpointValue({
+    base: false,
+    sm: true,
+  });
   return (
     <Flex direction="column" align="center" w="calc(100vw - (100vw - 100%))">
       <NavbarMobileScreen />
@@ -24,7 +28,7 @@ export default function ContactPage() {
           title="CONTATO / SAC"
           imageURL="./static/images/banner-contato-ovos-tinoco.png"
         />
-        <HeaderFooter />
+        {isWideScreen ? <HeaderFooter /> : null}
         <Heading
           color="blue.500"
           fontSize={["1.8rem", "2.125rem", "2.25rem", "2.375rem", "2.5rem"]}

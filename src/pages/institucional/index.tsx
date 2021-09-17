@@ -1,4 +1,4 @@
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, useBreakpointValue } from "@chakra-ui/react";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { HeaderController } from "../../components/Header/HeaderController";
 import { Footer } from "../../components/Footer";
@@ -9,7 +9,10 @@ import { HeaderFooter } from "../../components/HeaderFooter";
 
 export default function InstitutionalPage() {
   const [firstInfo] = infoCardTexts;
-
+  const isWideScreen = useBreakpointValue({
+    base: false,
+    sm: true
+  })
   return (
     <Flex direction="column" align="center" w="calc(100vw - (100vw - 100%))">
       <NavbarMobileScreen />
@@ -27,7 +30,7 @@ export default function InstitutionalPage() {
           title="A GRANJA TINOCO"
           imageURL="./static/images/Institucional.png"
         />
-        <HeaderFooter />
+        {isWideScreen ? <HeaderFooter /> : null}
         <Flex direction="column" align="center">
           <InfoCard
             imageURL="./static/images/5.png"

@@ -1,4 +1,10 @@
-import { Flex, Box, SimpleGrid, Image } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  SimpleGrid,
+  Image,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { HeaderController } from "../../components/Header/HeaderController";
 import { Footer } from "../../components/Footer";
@@ -7,6 +13,10 @@ import { FilterButtons } from "./components/FilterButtons";
 import { HeaderFooter } from "../../components/HeaderFooter";
 
 export default function ProductPage() {
+  const isWideScreen = useBreakpointValue({
+    base: false,
+    sm: true,
+  });
   return (
     <Flex direction="column" align="center" w="calc(100vw - (100vw - 100%))">
       <NavbarMobileScreen />
@@ -24,7 +34,7 @@ export default function ProductPage() {
           title="NOSSOS OVOS"
           imageURL="./static/images/banner-nossos-ovos.png"
         />
-        <HeaderFooter />
+        {isWideScreen ? <HeaderFooter /> : null}
         <SimpleGrid
           spacing="2"
           justifyItems="center"
