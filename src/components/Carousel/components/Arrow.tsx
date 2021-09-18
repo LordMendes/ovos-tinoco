@@ -1,7 +1,7 @@
 import styles from "../styles.module.css";
 
 interface ArrowProps {
-  disabled: boolean;
+  disabled?: boolean;
   onClick: any;
   direction: "left" | "right";
 }

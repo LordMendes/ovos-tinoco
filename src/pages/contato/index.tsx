@@ -1,10 +1,11 @@
-import { Flex, Box, Heading, Text, useBreakpointValue } from "@chakra-ui/react";
+import {  Box, Heading, Text, useBreakpointValue } from "@chakra-ui/react";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { HeaderController } from "../../components/Header/HeaderController";
 import { Footer } from "../../components/Footer";
 import { SubtitleImageCard } from "../../components/SubtitleImageCard";
 import { HeaderFooter } from "../../components/HeaderFooter";
 import { ContactForm } from "./components/ContactForm";
+import { Container } from "../../components/Container";
 
 export default function ContactPage() {
   const isWideScreen = useBreakpointValue({
@@ -12,13 +13,7 @@ export default function ContactPage() {
     sm: true,
   });
   return (
-    <Flex
-      direction="column"
-      align="center"
-      w="calc(100vw - (100vw - 100%))"
-      maxW="1440px"
-      mx="auto"
-    >
+    <Container>
       <NavbarMobileScreen />
       <HeaderController />
       <Box
@@ -50,6 +45,6 @@ export default function ContactPage() {
         <ContactForm />
       </Box>
       <Footer />
-    </Flex>
+    </Container>
   );
 }

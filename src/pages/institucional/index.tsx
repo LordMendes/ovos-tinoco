@@ -6,6 +6,7 @@ import { SubtitleImageCard } from "../../components/SubtitleImageCard";
 import { InfoCard } from "../../components/InfoCard";
 import { infoCardTexts } from "../../assets/variables/infoCardTexts";
 import { HeaderFooter } from "../../components/HeaderFooter";
+import { Container } from "../../components/Container";
 
 export default function InstitutionalPage() {
   const [firstInfo] = infoCardTexts;
@@ -14,13 +15,7 @@ export default function InstitutionalPage() {
     sm: true,
   });
   return (
-    <Flex
-      direction="column"
-      align="center"
-      w="calc(100vw - (100vw - 100%))"
-      maxW="1440px"
-      mx="auto"
-    >
+    <Container>
       <NavbarMobileScreen />
       <HeaderController />
       <Box
@@ -60,6 +55,6 @@ export default function InstitutionalPage() {
         </Flex>
       </Box>
       <Footer />
-    </Flex>
+    </Container>
   );
 }

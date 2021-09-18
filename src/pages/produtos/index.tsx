@@ -1,16 +1,11 @@
-import {
-  Flex,
-  Box,
-  SimpleGrid,
-  Image,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, SimpleGrid, Image, useBreakpointValue } from "@chakra-ui/react";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { HeaderController } from "../../components/Header/HeaderController";
 import { Footer } from "../../components/Footer";
 import { SubtitleImageCard } from "../../components/SubtitleImageCard";
 import { FilterButtons } from "./components/FilterButtons";
 import { HeaderFooter } from "../../components/HeaderFooter";
+import { Container } from "../../components/Container";
 
 export default function ProductPage() {
   const isWideScreen = useBreakpointValue({
@@ -18,13 +13,7 @@ export default function ProductPage() {
     sm: true,
   });
   return (
-    <Flex
-      direction="column"
-      align="center"
-      w="calc(100vw - (100vw - 100%))"
-      maxW="1440px"
-      mx="auto"
-    >
+    <Container>
       <NavbarMobileScreen />
       <HeaderController />
       <Box
@@ -83,6 +72,6 @@ export default function ProductPage() {
         </SimpleGrid>
       </Box>
       <Footer />
-    </Flex>
+    </Container>
   );
 }

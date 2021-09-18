@@ -5,6 +5,7 @@ import { Footer } from "../../components/Footer";
 import { SubtitleImageCard } from "../../components/SubtitleImageCard";
 import { HeaderFooter } from "../../components/HeaderFooter";
 import { RecipeItemCard } from "./components/RecipeItemCard";
+import { Container } from "../../components/Container";
 
 const array = [1, 2, 3];
 
@@ -14,13 +15,7 @@ export default function RecipePage() {
     sm: true,
   });
   return (
-    <Flex
-      direction="column"
-      align="center"
-      w="calc(100vw - (100vw - 100%))"
-      maxW="1440px"
-      mx="auto"
-    >
+    <Container>
       <NavbarMobileScreen />
       <HeaderController />
       <Box
@@ -58,6 +53,6 @@ export default function RecipePage() {
         </Flex>
       </Box>
       <Footer />
-    </Flex>
+    </Container>
   );
 }

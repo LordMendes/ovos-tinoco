@@ -48,7 +48,7 @@ export function Footer() {
           <Image
             src="./static/images/ovos-tinoco-footer.svg"
             alt="Ovos tinoco footer"
-            w={["50%", "35%", "25%", "20%"]}
+            w={["50%", "30%", "20%", "15%"]}
           />
           {isWideScreen && (
             <Stack

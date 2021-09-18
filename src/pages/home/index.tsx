@@ -1,4 +1,4 @@
-import { Box, Flex, Stack, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Stack, useBreakpointValue } from "@chakra-ui/react";
 import { CertificationCard } from "../../components/CertificationCard";
 import { Footer } from "../../components/Footer";
 import { InfoCard } from "../../components/InfoCard";
@@ -10,6 +10,7 @@ import { NewsletterCardFormController } from "../../components/NewsletterCardFor
 import { CarouselController } from "../../components/Carousel/CarouselController";
 import { infoCardTexts } from "../../assets/variables/infoCardTexts";
 import { HeaderFooter } from "../../components/HeaderFooter";
+import { Container } from "../../components/Container";
 
 export default function Home() {
   const isWideScreen = useBreakpointValue({
@@ -20,13 +21,7 @@ export default function Home() {
   const { title, subtitle, paragraph } = infoCardTexts[2];
 
   return (
-    <Flex
-      direction="column"
-      align="center"
-      w="calc(100vw - (100vw - 100%))"
-      maxW="1440px"
-      mx="auto"
-    >
+    <Container>
       <NavbarMobileScreen />
       <HeaderController />
       <Box
@@ -53,10 +48,11 @@ export default function Home() {
         maxW="1280px"
         mt={["4", "8", "16", "8", "12"]}
         mx={["4", "10", "14", "20"]}
+        spacing={["", "16", "24", "32", "40"]}
       >
         <MarketingCard
-          boldHeading="Galinhas 100% livres"
-          lightHeading="de hormônios e antibióticos"
+          boldHeading="Galinhas Saudáveis"
+          lightHeading="Ovos Ricos em Nutrientes"
           imageTitle="Galinha"
           imageURL="./static/images/banner-vertical-ovos-antibioticos@2x.png"
           imagePosition="bottom"
@@ -76,6 +72,6 @@ export default function Home() {
         <CertificationCard />
       </Box>
       <Footer />
-    </Flex>
+    </Container>
   );
 }

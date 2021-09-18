@@ -9,9 +9,15 @@ interface CarouselProps {
   sliderRef: RefObject<HTMLDivElement>;
   slider: KeenSlider;
   currentSlide: number;
+  timeOutId: number;
 }
 
-export function Carousel({ sliderRef, slider, currentSlide }: CarouselProps) {
+export function Carousel({
+  sliderRef,
+  slider,
+  currentSlide,
+  timeOutId,
+}: CarouselProps) {
   return (
     <>
       <div className={styles.navigationWrapper}>
@@ -24,14 +30,16 @@ export function Carousel({ sliderRef, slider, currentSlide }: CarouselProps) {
         {slider && (
           <>
             <Arrow
-              onClick={(e: Event | any) => e.stopPropagation() || slider.prev()}
-              disabled={currentSlide === 0}
+              onClick={(e: Event | any) =>
+                e.stopPropagation() || slider.prev() || clearTimeout(timeOutId)
+              }
               direction="left"
             />
             <Arrow
               direction="right"
-              onClick={(e: Event | any) => e.stopPropagation() || slider.next()}
-              disabled={currentSlide === slider.details().size - 1}
+              onClick={(e: Event | any) =>
+                e.stopPropagation() || slider.next() || clearTimeout(timeOutId)
+              }
             />
           </>
         )}
