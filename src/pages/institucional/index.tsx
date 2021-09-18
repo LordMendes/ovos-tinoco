@@ -18,15 +18,7 @@ export default function InstitutionalPage() {
     <Container>
       <NavbarMobileScreen />
       <HeaderController />
-      <Box
-        as="main"
-        h="100%"
-        width="100%"
-        borderTopWidth="6px"
-        borderColor="blue.500"
-        maxW="1920px"
-        mb="28"
-      >
+      <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
         <SubtitleImageCard
           title="A GRANJA TINOCO"
           imageURL="./static/images/Institucional.png"

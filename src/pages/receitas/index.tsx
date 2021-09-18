@@ -18,15 +18,7 @@ export default function RecipePage() {
     <Container>
       <NavbarMobileScreen />
       <HeaderController />
-      <Box
-        as="main"
-        h="100%"
-        width="100%"
-        borderTopWidth="6px"
-        borderColor="blue.500"
-        maxW="1920px"
-        mb="28"
-      >
+      <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
         <SubtitleImageCard
           title="RECEITAS"
           imageURL="./static/images/banner-ovos-tinoco-receitas.png"

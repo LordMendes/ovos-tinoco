@@ -1,4 +1,4 @@
-import {  Box, Heading, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Heading, Text, useBreakpointValue } from "@chakra-ui/react";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { HeaderController } from "../../components/Header/HeaderController";
 import { Footer } from "../../components/Footer";
@@ -16,15 +16,7 @@ export default function ContactPage() {
     <Container>
       <NavbarMobileScreen />
       <HeaderController />
-      <Box
-        as="main"
-        h="100%"
-        width="100%"
-        borderTopWidth="6px"
-        borderColor="blue.500"
-        maxW="1920px"
-        mb="28"
-      >
+      <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
         <SubtitleImageCard
           title="CONTATO / SAC"
           imageURL="./static/images/banner-contato-ovos-tinoco.png"

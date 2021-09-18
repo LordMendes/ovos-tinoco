@@ -16,15 +16,7 @@ export default function ProductPage() {
     <Container>
       <NavbarMobileScreen />
       <HeaderController />
-      <Box
-        as="main"
-        h="100%"
-        width="100%"
-        borderTopWidth="6px"
-        borderColor="blue.500"
-        maxW="1920px"
-        mb="28"
-      >
+      <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
         <SubtitleImageCard
           title="NOSSOS OVOS"
           imageURL="./static/images/banner-nossos-ovos.png"

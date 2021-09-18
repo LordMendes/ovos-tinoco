@@ -17,7 +17,7 @@ export function Footer() {
     sm: true,
   });
   return (
-    <Box as="footer" w="100%" maxW="1920px">
+    <Box as="footer" w="100%">
       <Box
         backgroundImage={[
           "url('./static/images/FooterImage.png')",
@@ -27,6 +27,9 @@ export function Footer() {
         backgroundSize="cover"
         backgroundPosition={["50%", "20% 20%"]}
         mt="-60px"
+        maxW="1920px"
+        marginLeft="auto"
+        marginRight="auto"
       />
       <Stack
         borderTop="8px"
@@ -44,6 +47,7 @@ export function Footer() {
           my={["0", "6"]}
           justifyContent="space-between"
           width="100%"
+          maxW="1728px"
         >
           <Image
             src="./static/images/ovos-tinoco-footer.svg"
@@ -105,12 +109,18 @@ export function Footer() {
             </VStack>
           )}
         </Stack>
-        <Divider orientation="horizontal" opacity="1" borderColor="blue.300" />
+        <Divider
+          orientation="horizontal"
+          opacity="1"
+          borderColor="blue.300"
+          maxW="1728px"
+        />
         <Flex
           direction={["column", "row"]}
           justifyContent="space-between"
           width="100%"
           px={["0", "4", "4", "5", "6"]}
+          maxW="1728px"
         >
           <Text color="blue.300" fontSize="12" align="center">
             Ovos Tinoco 2021 © Todos os direito reservador

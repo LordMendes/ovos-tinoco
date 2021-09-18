@@ -24,14 +24,7 @@ export default function Home() {
     <Container>
       <NavbarMobileScreen />
       <HeaderController />
-      <Box
-        w="100%"
-        position="relative"
-        h="100%"
-        borderTopWidth="6px"
-        borderColor="blue.500"
-        maxW="1920px"
-      >
+      <Box w="100%" position="relative" h="100%" maxW="1920px">
         <CarouselController />
       </Box>
       <HeaderFooter />
