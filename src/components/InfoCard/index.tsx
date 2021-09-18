@@ -35,14 +35,19 @@ export function InfoCard({
         mb={["2", "2", "-6"]}
         maxW={["100%", "720px", "720px", "1242px"]}
       >
-        <Box w={["100%", "100%", "50%"]} py={["0", "0", "8"]}>
+        <Flex
+          w={["100%", "100%", "50%"]}
+          py={["0", "0", "8"]}
+          justifyContent="center"
+          alignItems="center"
+        >
           <Image
             src={imageURL}
             alt="Juntos Ovos Tinoco"
-            h="100%"
+            h="auto"
             maxH={["250px", "400px", "100%"]}
           />
-        </Box>
+        </Flex>
         <Box ml={["0", "6", "6", "10", "24"]} w={["100%", "100%", "50%"]}>
           <Heading
             fontSize={["22", "22", "22", "28", "34"]}
@@ -92,14 +97,19 @@ export function InfoCard({
           {paragraph}
         </Text>
       </Box>
-      <Box w={["100%", "100%", "50%"]} py={["0", "0", "8"]}>
+      <Flex
+        w={["100%", "100%", "50%"]}
+        py={["0", "0", "8"]}
+        justifyContent="center"
+        alignItems="center"
+      >
         <Image
           src={imageURL}
           alt="Juntos Ovos Tinoco"
-          h="100%"
+          h="auto"
           maxH={["250px", "400px", "100%"]}
         />
-      </Box>
+      </Flex>
     </Flex>
   );
 }
