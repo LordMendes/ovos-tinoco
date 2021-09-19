@@ -1,6 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavbarContextProvider } from "./contexts/NavbarDropdownMenuContext";
+import { ProductsContextProvider } from "./contexts/ProductsContext";
 import ContactPage from "./pages/contato";
 import Home from "./pages/home";
 import InstitutionalPage from "./pages/institucional";
@@ -15,13 +16,19 @@ function App() {
       <Fonts />
       <Router>
         <NavbarContextProvider>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/institucional" exact component={InstitutionalPage} />
-            <Route path="/contato" exact component={ContactPage} />
-            <Route path="/receitas" exact component={RecipePage} />
-            <Route path="/produtos" exact component={ProductPage} />
-          </Switch>
+          <ProductsContextProvider>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route
+                path="/institucional"
+                exact
+                component={InstitutionalPage}
+              />
+              <Route path="/contato" exact component={ContactPage} />
+              <Route path="/receitas" exact component={RecipePage} />
+              <Route path="/produtos" exact component={ProductPage} />
+            </Switch>
+          </ProductsContextProvider>
         </NavbarContextProvider>
       </Router>
     </ChakraProvider>

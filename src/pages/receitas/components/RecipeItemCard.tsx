@@ -22,9 +22,10 @@ export function RecipeItemCard() {
       <Image
         borderTopLeftRadius="1rem"
         borderTopRightRadius="1rem"
-        src="./static/images/Logo.svg"
+        src="./static/images/Logo-copy.svg"
         alt="qualkque"
         h="8%"
+        // filter="invert(96%) sepia(96%) saturate(0%) hue-rotate(146deg) brightness(105%) contrast(105%)"
         top={["52%", "55%"]}
         right="5%"
         position="absolute"
