@@ -40,18 +40,25 @@ const productsListMock = [
     type: "natura",
   },
 ];
-
-type ProductsContextData = {
-  productsList: Product[];
-  setProductsList: Dispatch<SetStateAction<Product[]>>;
-  productsListMock: Product[];
-};
-
 type Product = {
   image: string;
   title: string;
   amount: number;
   type: string;
+};
+
+type FilterType = {
+  natura: boolean;
+  liquid: boolean;
+  all: boolean;
+};
+
+type ProductsContextData = {
+  productsList: Product[];
+  setProductsList: Dispatch<SetStateAction<Product[]>>;
+  productsListMock: Product[];
+  isFiltering: FilterType;
+  setIsFiltering: Dispatch<SetStateAction<FilterType>>;
 };
 
 export const ProductsContext = createContext({} as ProductsContextData);
@@ -64,6 +71,11 @@ export function ProductsContextProvider({
   children,
 }: ProductsContextProviderProps) {
   const [productsList, setProductsList] = useState<Product[]>([]);
+  const [isFiltering, setIsFiltering] = useState({
+    natura: false,
+    liquid: false,
+    all: false,
+  });
 
   useEffect(() => {
     setTimeout(() => {
@@ -73,7 +85,13 @@ export function ProductsContextProvider({
 
   return (
     <ProductsContext.Provider
-      value={{ productsList, setProductsList, productsListMock }}
+      value={{
+        productsList,
+        setProductsList,
+        productsListMock,
+        setIsFiltering,
+        isFiltering,
+      }}
     >
       {children}
     </ProductsContext.Provider>

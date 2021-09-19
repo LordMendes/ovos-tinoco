@@ -15,14 +15,22 @@ type Product = {
   type: string;
 };
 
+type FilterType = {
+  natura: boolean;
+  liquid: boolean;
+  all: boolean;
+};
+
 interface ProductsPageViewProps {
   products: Product[];
   isWideScreen: boolean | undefined;
+  isFiltering: FilterType;
 }
 
 export function ProductPageView({
   products,
   isWideScreen,
+  isFiltering,
 }: ProductsPageViewProps) {
   return (
     <Container>
@@ -49,7 +57,14 @@ export function ProductPageView({
             mx="12"
           >
             {products.map((item: Product) => {
-              return <ProductItemCard item={item} />;
+              return (
+                <ProductItemCard
+                  item={item}
+                  isFiltering={
+                    isFiltering.all || isFiltering.liquid || isFiltering.natura
+                  }
+                />
+              );
             })}
           </SimpleGrid>
         </SimpleGrid>

@@ -3,11 +3,17 @@ import { Button, HStack, Flex } from "@chakra-ui/react";
 interface FilterButtonsViewProps {
   isWideScreen: boolean | undefined;
   onFilter: (type: string) => void;
+  isFiltering: {
+    natura: boolean;
+    all: boolean;
+    liquid: boolean;
+  };
 }
 
 export function FilterButtonsView({
   isWideScreen,
   onFilter,
+  isFiltering,
 }: FilterButtonsViewProps) {
   if (isWideScreen) {
     return (
@@ -25,6 +31,7 @@ export function FilterButtonsView({
           borderRadius="xl"
           minW="162px"
           onClick={() => onFilter("natura")}
+          isLoading={isFiltering.natura}
         >
           Ovos in natura
         </Button>
@@ -41,6 +48,7 @@ export function FilterButtonsView({
           borderRadius="xl"
           minW="162px"
           onClick={() => onFilter("liquid")}
+          isLoading={isFiltering.liquid}
         >
           Ovos Líquidos
         </Button>
@@ -57,6 +65,7 @@ export function FilterButtonsView({
           borderRadius="xl"
           minW="192px"
           onClick={() => onFilter("all")}
+          isLoading={isFiltering.all}
         >
           Todos os produtos
         </Button>
@@ -79,6 +88,7 @@ export function FilterButtonsView({
           borderRadius="xl"
           minW="162px"
           onClick={() => onFilter("natura")}
+          isLoading={isFiltering.natura}
         >
           Ovos in natura
         </Button>
@@ -95,6 +105,7 @@ export function FilterButtonsView({
           borderRadius="xl"
           minW="162px"
           onClick={() => onFilter("liquid")}
+          isLoading={isFiltering.liquid}
         >
           Ovos Líquidos
         </Button>
@@ -113,6 +124,7 @@ export function FilterButtonsView({
           borderRadius="xl"
           minW="192px"
           onClick={() => onFilter("all")}
+          isLoading={isFiltering.all}
         >
           Todos os produtos
         </Button>

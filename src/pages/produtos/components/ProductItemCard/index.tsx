@@ -7,11 +7,12 @@ interface ProductItemCardProps {
     amount: number;
     type: string;
   };
+  isFiltering: boolean;
 }
 
-export function ProductItemCard({ item }: ProductItemCardProps) {
+export function ProductItemCard({ item, isFiltering }: ProductItemCardProps) {
   return (
-    <Box align="center" color="blue.500">
+    <Box align="center" color="blue.500" opacity={isFiltering ? 0.4 : 1}>
       <Image
         src={item.image}
         alt={`Produto ${item.title} ${item.amount}`}
