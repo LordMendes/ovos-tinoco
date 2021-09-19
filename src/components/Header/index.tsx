@@ -31,7 +31,7 @@ export function Header({ isWideScreen, onOpen }: HeaderProps) {
         px={["6", "8", "14", "14", "0"]}
         minHeight="5rem"
         w="100%"
-        maxW="1242px"
+        maxW="1120px"
       >
         <Link to="/">
           <ChakraLink>

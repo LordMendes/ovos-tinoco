@@ -12,7 +12,7 @@ export function RecipeInviteCard() {
       w="100%"
       align="center"
     >
-      <Box mx={["6", "12", "20", "24"]} maxW={1242} position="relative">
+      <Box mx={["6", "12", "20", "24"]} maxW={1120} position="relative">
         <Image
           src={bgRecipeImg}
           alt="Veja Nossas Receitas"

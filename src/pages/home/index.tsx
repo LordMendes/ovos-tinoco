@@ -38,10 +38,10 @@ export default function Home() {
       <RecipeInviteCard />
       <Stack
         direction={["column", "row"]}
-        maxW="1280px"
+        maxW="1150px"
         mt={["4", "8", "16", "8", "12"]}
-        mx={["4", "10", "14", "20"]}
-        spacing={["", "16", "24", "32", "40"]}
+        mx={["4", "10", "16", "20"]}
+        spacing={["", "6", "10", "16", "24"]}
       >
         <MarketingCard
           boldHeading="Galinhas Saudáveis"

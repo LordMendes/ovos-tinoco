@@ -60,7 +60,7 @@
 
 .navigationWrapper {
   position: relative;
-  height: 750px;
+  height: 690px;
 }
 
 .dots {
@@ -117,9 +117,6 @@
 }
 
 @media (max-width: 1440px) {
-  .navigationWrapper {
-    height: 750px;
-  }
   .dots {
     top: 94%;
   }

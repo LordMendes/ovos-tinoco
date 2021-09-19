@@ -67,7 +67,7 @@ export function NewsletterCardForm({
         onSubmit={handleSubmit(handleSignNewsletter)}
         mb="5"
         minH={["11rem", "218px", "300px", "390px"]}
-        maxW="1240px"
+        maxW="1120px"
       >
         <Stack
           spacing="2"
@@ -81,7 +81,7 @@ export function NewsletterCardForm({
           {isWideScreen && (
             <Box as="header" width="50%">
               <Heading
-                fontSize={["21", "30", "30", "46", "64"]}
+                fontSize={["21", "30", "30", "46", "60"]}
                 color="blue.500"
                 fontWeight={900}
                 mb="4"
