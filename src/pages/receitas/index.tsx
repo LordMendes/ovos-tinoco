@@ -21,7 +21,7 @@ export default function RecipePage() {
       <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
         <SubtitleImageCard
           title="RECEITAS"
-          imageURL="./static/images/banner-ovos-tinoco-receitas.png"
+          imageURL="/static/images/banner-ovos-tinoco-receitas.png"
         />
         {isWideScreen ? <HeaderFooter /> : null}
         <Flex

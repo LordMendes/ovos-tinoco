@@ -13,28 +13,28 @@ export function CertificationCard() {
     >
       <Box>
         <Image
-          src="./static/images/h-04-min@3x.png"
+          src="/static/images/h-04-min@3x.png"
           alt="dasdas"
           w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
         />
       </Box>
       <Box>
         <Image
-          src="./static/images/h-02-min@3x.png"
+          src="/static/images/h-02-min@3x.png"
           alt="sad"
           w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
         />
       </Box>
       <Box>
         <Image
-          src="./static/images/h-05-min@3x.png"
+          src="/static/images/h-05-min@3x.png"
           alt="dasdas"
           w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
         />
       </Box>
       <Box>
         <Image
-          src="./static/images/h-06-min@3x.png"
+          src="/static/images/h-06-min@3x.png"
           alt="das"
           w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
         />

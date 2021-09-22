@@ -30,7 +30,7 @@ export default function Home() {
       <HeaderFooter />
 
       <InfoCard
-        imageURL="./static/images/juntos-ovos-tinoco@2x.png"
+        imageURL="/static/images/juntos-ovos-tinoco@2x.png"
         title={title}
         subtitle={subtitle}
         paragraph={paragraph}
@@ -47,7 +47,7 @@ export default function Home() {
           boldHeading="Galinhas Saudáveis"
           lightHeading="Ovos Ricos em Nutrientes"
           imageTitle="Galinha"
-          imageURL="./static/images/banner-vertical-ovos-antibioticos@2x.png"
+          imageURL="/static/images/banner-vertical-ovos-antibioticos@2x.png"
           imagePosition="bottom"
           isWideScreen={isWideScreen}
         />
@@ -55,7 +55,7 @@ export default function Home() {
           boldHeading="Conheça toda"
           lightHeading="Nossa linha de ovos"
           imageTitle="Caixas de ovos"
-          imageURL="./static/images/banner-vertical-ovos-produtos@2x.png"
+          imageURL="/static/images/banner-vertical-ovos-produtos@2x.png"
           imagePosition="top"
           isWideScreen={isWideScreen}
         />

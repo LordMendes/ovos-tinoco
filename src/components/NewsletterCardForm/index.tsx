@@ -59,7 +59,7 @@ export function NewsletterCardForm({
 
       <Box
         as="form"
-        backgroundImage="url('./static/images/news-ovos-tinoco@2x.png')"
+        backgroundImage="url('/static/images/news-ovos-tinoco@2x.png')"
         backgroundPosition="50%"
         width="100%"
         backgroundSize="cover"

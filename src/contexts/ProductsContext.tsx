@@ -10,31 +10,31 @@ import {
 
 const productsListMock = [
   {
-    image: "./static/images/branc06.png",
+    image: "/static/images/branc06.png",
     title: "Ovos Brancos",
     amount: 6,
     type: "liquid",
   },
   {
-    image: "./static/images/branco12.png",
+    image: "/static/images/branco12.png",
     title: "Ovos Brancos",
     amount: 12,
     type: "liquid",
   },
   {
-    image: "./static/images/branco40.png",
+    image: "/static/images/branco40.png",
     title: "Ovos Brancos",
     amount: 30,
     type: "liquid",
   },
   {
-    image: "./static/images/caipira12.png",
+    image: "/static/images/caipira12.png",
     title: "Ovos Vermelhos",
     amount: 12,
     type: "natura",
   },
   {
-    image: "./static/images/caipira40.png",
+    image: "/static/images/caipira40.png",
     title: "Ovos Vermelhos",
     amount: 30,
     type: "natura",

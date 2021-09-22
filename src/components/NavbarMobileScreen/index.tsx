@@ -36,7 +36,7 @@ export function NavbarMobileScreen() {
             bg="white !important"
           />
           <DrawerHeader mb="6">
-            <Image src="./static/images/Logo.svg" alt="Logo" />
+            <Image src="/static/images/Logo.svg" alt="Logo" />
           </DrawerHeader>
           <DrawerBody px="14px">
             <VStack>
@@ -117,13 +117,13 @@ export function NavbarMobileScreen() {
                   my="auto"
                 >
                   <Image
-                    src="./static/images/facebook.svg"
+                    src="/static/images/facebook.svg"
                     alt="Facebook Logo"
                   />
                 </ChakraLink>
                 <ChakraLink onClick={() => handleClick("instagram")}>
                   <Image
-                    src="./static/images/IG_Glyph_Fill.png"
+                    src="/static/images/IG_Glyph_Fill.png"
                     alt="Instagram Logo"
                     mr="2"
                   />

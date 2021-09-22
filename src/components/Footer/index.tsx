@@ -20,8 +20,8 @@ export function Footer() {
     <Box as="footer" w="100%">
       <Box
         backgroundImage={[
-          "url('./static/images/FooterImage.png')",
-          "url('./static/images/Imagem-6.png')",
+          "url('/static/images/FooterImage.png')",
+          "url('/static/images/Imagem-6.png')",
         ]}
         minHeight={["7.5rem", "10rem", "10rem", "12.5rem", "16.5rem"]}
         backgroundSize="cover"
@@ -50,7 +50,7 @@ export function Footer() {
           maxW="1728px"
         >
           <Image
-            src="./static/images/ovos-tinoco-footer.svg"
+            src="/static/images/ovos-tinoco-footer.svg"
             alt="Ovos tinoco footer"
             w={["50%", "30%", "20%", "15%"]}
           />

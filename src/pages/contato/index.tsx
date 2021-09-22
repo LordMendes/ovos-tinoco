@@ -19,7 +19,7 @@ export default function ContactPage() {
       <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
         <SubtitleImageCard
           title="CONTATO / SAC"
-          imageURL="./static/images/banner-contato-ovos-tinoco.png"
+          imageURL="/static/images/banner-contato-ovos-tinoco.png"
         />
         {isWideScreen ? <HeaderFooter /> : null}
         <Heading

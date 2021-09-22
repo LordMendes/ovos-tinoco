@@ -21,25 +21,25 @@ export default function InstitutionalPage() {
       <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
         <SubtitleImageCard
           title="A GRANJA TINOCO"
-          imageURL="./static/images/Institucional.png"
+          imageURL="/static/images/Institucional.png"
         />
         {isWideScreen ? <HeaderFooter /> : null}
         <Flex direction="column" align="center">
           <InfoCard
-            imageURL="./static/images/5.png"
+            imageURL="/static/images/5.png"
             title={firstInfo.title}
             subtitle={firstInfo.subtitle}
             paragraph={firstInfo.paragraph}
           />
           <InfoCard
-            imageURL="./static/images/5.png"
+            imageURL="/static/images/5.png"
             title={firstInfo.title}
             subtitle={firstInfo.subtitle}
             paragraph={firstInfo.paragraph}
             isRight
           />
           <InfoCard
-            imageURL="./static/images/5.png"
+            imageURL="/static/images/5.png"
             title={firstInfo.title}
             subtitle={firstInfo.subtitle}
             paragraph={firstInfo.paragraph}

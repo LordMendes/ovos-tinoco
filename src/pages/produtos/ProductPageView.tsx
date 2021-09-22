@@ -39,7 +39,7 @@ export function ProductPageView({
       <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
         <SubtitleImageCard
           title="NOSSOS OVOS"
-          imageURL="./static/images/banner-nossos-ovos.png"
+          imageURL="/static/images/banner-nossos-ovos.png"
         />
         {isWideScreen ? <HeaderFooter /> : null}
         <SimpleGrid
