@@ -7,6 +7,8 @@ import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { Box, useBreakpointValue } from "@chakra-ui/react";
 import { SubtitleImageCard } from "../../components/SubtitleImageCard";
 import { HeaderFooter } from "../../components/HeaderFooter";
+import { useEffect, useState } from "react";
+import { getRecipes } from "../../services/api";
 
 type Params = {
   slug: string;
@@ -21,6 +23,14 @@ export default function RecipeItem({ match }: RecipeItemProps) {
     base: false,
     sm: true,
   });
+
+  const [content, setContent] = useState<any>([]);
+  console.log(content);
+
+  useEffect(() => {
+    getRecipes().then((res) => setContent(res));
+  }, []);
+
   return (
     <Container>
       <NavbarMobileScreen />
@@ -31,7 +41,11 @@ export default function RecipeItem({ match }: RecipeItemProps) {
           imageURL="/static/images/tinoco-maio05-crepefrances1.png"
         />
         {isWideScreen ? <HeaderFooter /> : null}
-        ...Aguarde
+        {content.length > 0 && (
+          <div
+            dangerouslySetInnerHTML={{ __html: content[0].content.rendered }}
+          />
+        )}
       </Box>
       <Footer />
     </Container>
