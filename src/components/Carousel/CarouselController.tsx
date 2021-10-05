@@ -13,7 +13,6 @@ export function CarouselController() {
     duration: 1000,
     loop: true,
   });
-  // console.log(state);
 
   useEffect(() => {
     if (slider !== null) {

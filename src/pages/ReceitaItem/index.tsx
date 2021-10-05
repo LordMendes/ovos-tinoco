@@ -1,53 +1,54 @@
-import { match } from "react-router";
-import { Container } from "../../components/Container";
-import { Footer } from "../../components/Footer";
-import { HeaderController } from "../../components/Header/HeaderController";
-import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
-
-import { Box, useBreakpointValue } from "@chakra-ui/react";
-import { SubtitleImageCard } from "../../components/SubtitleImageCard";
-import { HeaderFooter } from "../../components/HeaderFooter";
+import { useBreakpointValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { getRecipes } from "../../services/api";
+import { useParams, useRouteMatch, useHistory } from "react-router-dom";
+import { getRecipeItem } from "../../services/api";
+import { RecipeItemView } from "./indexView";
 
-type Params = {
-  slug: string;
+type ACFData = {
+  banner: {
+    ID: number;
+    alt?: string;
+    url: string;
+  };
+  ingredients: string;
+  preparation: string;
+  people_amount: string;
+  resume?: string;
+  side_image: {
+    ID: number;
+    alt?: string;
+    url: string;
+  }
 };
 
-interface RecipeItemProps {
-  match: match<Params>;
-}
+type Recipes = {
+  id: number;
+  acf: ACFData;
+  slug: string;
+  title: {
+    rendered: string;
+  };
+};
 
-export default function RecipeItem({ match }: RecipeItemProps) {
+export default function RecipeItem() {
   const isWideScreen = useBreakpointValue({
     base: false,
     sm: true,
   });
 
-  const [content, setContent] = useState<any>([]);
-  console.log(content);
+  const { id } = useParams<any>();
+
+  const [content, setContent] = useState<Recipes | any>({} as Recipes);
+  const { push } = useHistory();
 
   useEffect(() => {
-    getRecipes().then((res) => setContent(res));
-  }, []);
+    getRecipeItem(id).then((res) => {
+      if (!res.message) setContent(res);
+      else {
+        push("/error");
+      }
+    });
+  }, [id, push]);
 
-  return (
-    <Container>
-      <NavbarMobileScreen />
-      <HeaderController />
-      <Box as="main" h="100%" width="100%" maxW="1920px" mb="28">
-        <SubtitleImageCard
-          title="CREPRE FRANCÊS"
-          imageURL="/static/images/tinoco-maio05-crepefrances1.png"
-        />
-        {isWideScreen ? <HeaderFooter /> : null}
-        {content.length > 0 && (
-          <div
-            dangerouslySetInnerHTML={{ __html: content[0].content.rendered }}
-          />
-        )}
-      </Box>
-      <Footer />
-    </Container>
-  );
+  return <RecipeItemView isWideScreen={isWideScreen} content={content} />;
 }

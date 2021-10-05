@@ -9,11 +9,37 @@ import { Container } from "../../components/Container";
 
 const array = [1, 2, 3];
 
-export default function RecipePage() {
+type ACFData = {
+  banner: {
+    ID: number;
+    alt?: string;
+    url: string;
+  };
+  ingredientes: string;
+  modo_de_preparo: string;
+  rendimento: string;
+  resumo?: string;
+};
+
+type Recipes = {
+  id: number;
+  acf: ACFData;
+  slug: string;
+  title: {
+    rendered: string;
+  };
+};
+
+interface RecipesPageProps {
+  recipes: Recipes[];
+}
+
+export default function RecipePage({ recipes }: RecipesPageProps) {
   const isWideScreen = useBreakpointValue({
     base: false,
     sm: true,
   });
+
   return (
     <Container>
       <NavbarMobileScreen />

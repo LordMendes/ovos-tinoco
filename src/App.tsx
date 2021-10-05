@@ -10,8 +10,38 @@ import RecipePage from "./pages/receitas";
 import RecipeItem from "./pages/ReceitaItem";
 import Fonts from "./styles/fonts";
 import { theme } from "./styles/theme";
+import { useEffect, useState } from "react";
+import { getRecipes } from "./services/api";
+import ErrorPage from "./pages/ErrorPage";
+
+type ACFData = {
+  banner: {
+    ID: number;
+    alt?: string;
+    url: string;
+  };
+  ingredientes: string;
+  modo_de_preparo: string;
+  rendimento: string;
+  resumo?: string;
+};
+
+type Recipes = {
+  id: number;
+  acf: ACFData;
+  slug: string;
+  title: {
+    rendered: string;
+  };
+};
 
 function App() {
+  const [recipes, setRecipes] = useState<Recipes[]>([]);
+
+  useEffect(() => {
+    getRecipes().then((res) => setRecipes(res));
+  }, []);
+
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
@@ -26,9 +56,14 @@ function App() {
                 component={InstitutionalPage}
               />
               <Route path="/contato" exact component={ContactPage} />
-              <Route path="/receitas" exact component={RecipePage} />
+              <Route path="/receitas" exact>
+                <RecipePage recipes={recipes} />
+              </Route>
               <Route path="/produtos" exact component={ProductPage} />
-              <Route path={`/receitas/:slug`} exact component={RecipeItem} />
+              <Route path={`/receitas/:id`}>
+                <RecipeItem />
+              </Route>
+              <Route path="/error" exact component={ErrorPage} />
             </Switch>
           </ProductsContextProvider>
         </NavbarContextProvider>
