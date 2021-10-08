@@ -7,18 +7,19 @@ import { HeaderFooter } from "../../components/HeaderFooter";
 import { RecipeItemCard } from "./components/RecipeItemCard";
 import { Container } from "../../components/Container";
 
-const array = [1, 2, 3];
+type ImageData = {
+  ID: number;
+  alt?: string;
+  url: string;
+};
 
 type ACFData = {
-  banner: {
-    ID: number;
-    alt?: string;
-    url: string;
-  };
-  ingredientes: string;
-  modo_de_preparo: string;
-  rendimento: string;
-  resumo?: string;
+  banner: ImageData;
+  ingredients: string;
+  cook_tutorial: string;
+  servings: string;
+  resume: string;
+  side_image: ImageData;
 };
 
 type Recipes = {
@@ -64,8 +65,14 @@ export default function RecipePage({ recipes }: RecipesPageProps) {
             w="100%"
             maxW="1440px"
           >
-            {array.map((item) => {
-              return <RecipeItemCard />;
+            {recipes.map((item) => {
+              return (
+                <RecipeItemCard
+                  key={item.id}
+                  title={item.title.rendered}
+                  imageURL={item.acf.banner.url}
+                />
+              );
             })}
           </SimpleGrid>
         </Flex>

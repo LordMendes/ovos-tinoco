@@ -1,24 +1,22 @@
 import { useBreakpointValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useParams, useRouteMatch, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { getRecipeItem } from "../../services/api";
 import { RecipeItemView } from "./indexView";
 
+type ImageData = {
+  ID: number;
+  alt?: string;
+  url: string;
+};
+
 type ACFData = {
-  banner: {
-    ID: number;
-    alt?: string;
-    url: string;
-  };
+  banner: ImageData;
   ingredients: string;
-  preparation: string;
-  people_amount: string;
-  resume?: string;
-  side_image: {
-    ID: number;
-    alt?: string;
-    url: string;
-  }
+  cook_tutorial: string;
+  servings: string;
+  resume: string;
+  side_image: ImageData;
 };
 
 type Recipes = {

@@ -1,6 +1,11 @@
 import { Box, Image, Heading, Button } from "@chakra-ui/react";
 
-export function RecipeItemCard() {
+interface RecipeItemCardProps {
+  title: string;
+  imageURL: string;
+}
+
+export function RecipeItemCard({ title, imageURL }: RecipeItemCardProps) {
   return (
     <Box
       borderRadius="1rem"
@@ -14,7 +19,7 @@ export function RecipeItemCard() {
       <Image
         borderTopLeftRadius="1rem"
         borderTopRightRadius="1rem"
-        src="/static/images/Slideshow4@3x.png"
+        src={imageURL}
         alt="qualkque"
         h={["63%", "66%"]}
         w="100%"
@@ -25,7 +30,6 @@ export function RecipeItemCard() {
         src="/static/images/Logo-copy.svg"
         alt="qualkque"
         h="8%"
-        // filter="invert(96%) sepia(96%) saturate(0%) hue-rotate(146deg) brightness(105%) contrast(105%)"
         top={["52%", "55%"]}
         right="5%"
         position="absolute"
@@ -37,7 +41,7 @@ export function RecipeItemCard() {
           fontSize="2xl"
           fontWeight={900}
         >
-          Crepe Francês
+          {title}
         </Heading>
         <Button
           bg="yellow.500"

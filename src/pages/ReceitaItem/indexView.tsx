@@ -6,21 +6,19 @@ import { HeaderFooter } from "../../components/HeaderFooter";
 import { NavbarMobileScreen } from "../../components/NavbarMobileScreen";
 import { SubtitleImageCard } from "../../components/SubtitleImageCard";
 
+type ImageData = {
+  ID: number;
+  alt?: string;
+  url: string;
+};
+
 type ACFData = {
-  banner: {
-    ID: number;
-    alt?: string;
-    url: string;
-  };
+  banner: ImageData;
   ingredients: string;
-  preparation: string;
-  people_amount: string;
+  cook_tutorial: string;
+  servings: string;
   resume: string;
-  side_image: {
-    ID: number;
-    alt?: string;
-    url: string;
-  };
+  side_image: ImageData;
 };
 
 type Recipes = {
@@ -78,10 +76,10 @@ export function RecipeItemView({ isWideScreen, content }: RecipeItemViewProps) {
               <Heading size="md">Modo de Preparo:</Heading>
               <Box
                 ml="5"
-                dangerouslySetInnerHTML={{ __html: content.acf.preparation }}
+                dangerouslySetInnerHTML={{ __html: content.acf.cook_tutorial }}
               />
               <Box
-                dangerouslySetInnerHTML={{ __html: content.acf.people_amount }}
+                dangerouslySetInnerHTML={{ __html: content.acf.servings }}
                 fontWeight={900}
               />
             </Box>
