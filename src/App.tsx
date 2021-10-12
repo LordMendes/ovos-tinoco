@@ -12,7 +12,6 @@ import Fonts from "./styles/fonts";
 import { theme } from "./styles/theme";
 import { useEffect, useState } from "react";
 import { getRecipes } from "./services/api";
-import ErrorPage from "./pages/ErrorPage";
 
 type ImageData = {
   ID: number;
@@ -66,7 +65,6 @@ function App() {
               <Route path={`/receitas/:id`}>
                 <RecipeItem />
               </Route>
-              <Route path="/error" exact component={ErrorPage} />
             </Switch>
           </ProductsContextProvider>
         </NavbarContextProvider>

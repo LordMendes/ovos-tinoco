@@ -1,7 +1,8 @@
 import { useBreakpointValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getRecipeItem } from "../../services/api";
+import ErrorPage from "../ErrorPage";
 import { RecipeItemView } from "./indexView";
 
 type ImageData = {
@@ -37,16 +38,20 @@ export default function RecipeItem() {
   const { id } = useParams<any>();
 
   const [content, setContent] = useState<Recipes | any>({} as Recipes);
-  const { push } = useHistory();
+  const [error404Page, setError404Page] = useState(false);
 
   useEffect(() => {
     getRecipeItem(id).then((res) => {
       if (!res.message) setContent(res);
       else {
-        push("/error");
+        setError404Page(true);
       }
     });
-  }, [id, push]);
+  }, [id]);
 
-  return <RecipeItemView isWideScreen={isWideScreen} content={content} />;
+  return error404Page ? (
+    <ErrorPage />
+  ) : (
+    <RecipeItemView isWideScreen={isWideScreen} content={content} />
+  );
 }

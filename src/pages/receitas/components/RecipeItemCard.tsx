@@ -1,11 +1,15 @@
-import { Box, Image, Heading, Button } from "@chakra-ui/react";
+import { Box, Heading, Button } from "@chakra-ui/react";
+import { useHistory } from "react-router";
 
 interface RecipeItemCardProps {
   title: string;
   imageURL: string;
+  id: number;
 }
 
-export function RecipeItemCard({ title, imageURL }: RecipeItemCardProps) {
+export function RecipeItemCard({ title, imageURL, id }: RecipeItemCardProps) {
+  const { push } = useHistory();
+
   return (
     <Box
       borderRadius="1rem"
@@ -16,29 +20,22 @@ export function RecipeItemCard({ title, imageURL }: RecipeItemCardProps) {
       maxW="400px"
       mx="auto"
     >
-      <Image
-        borderTopLeftRadius="1rem"
-        borderTopRightRadius="1rem"
-        src={imageURL}
-        alt="qualkque"
+      <Box
         h={["63%", "66%"]}
         w="100%"
-      />
-      <Image
         borderTopLeftRadius="1rem"
         borderTopRightRadius="1rem"
-        src="/static/images/Logo-copy.svg"
-        alt="qualkque"
-        h="8%"
-        top={["52%", "55%"]}
-        right="5%"
-        position="absolute"
+        backgroundImage={`url(${imageURL})`}
+        backgroundPosition="100% 100%"
+        backgroundSize="150% 150%"
+        onClick={() => push(`/receitas/${id}`)}
+        cursor="pointer"
       />
       <Box bg="white">
         <Heading
           align="center"
           mt={["4", "4", "6"]}
-          fontSize="2xl"
+          fontSize="xl"
           fontWeight={900}
         >
           {title}
@@ -56,6 +53,7 @@ export function RecipeItemCard({ title, imageURL }: RecipeItemCardProps) {
           fontWeight={300}
           type="button"
           colorScheme="yellow"
+          onClick={() => push(`/receitas/${id}`)}
         >
           Confira agora
         </Button>

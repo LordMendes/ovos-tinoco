@@ -16,6 +16,8 @@ export function HeaderFooter() {
         fontWeight={700}
         align="center"
         fontSize={["1rem", "1.25rem", "1.25rem", "1.5rem", "2rem"]}
+        onClick={() => window.open("https://www.instagram.com", "_blank")}
+        cursor="pointer"
       >
         Acompanhe nosso instagram{" "}
         <Text as="span" color="yellow.500">

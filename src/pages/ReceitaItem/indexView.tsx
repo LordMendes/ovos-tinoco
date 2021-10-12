@@ -1,4 +1,4 @@
-import { Box, Image, Text, Heading } from "@chakra-ui/react";
+import { Box, Image, Text, Heading, VStack, Stack } from "@chakra-ui/react";
 import { Container } from "../../components/Container";
 import { Footer } from "../../components/Footer";
 import { HeaderController } from "../../components/Header/HeaderController";
@@ -50,39 +50,81 @@ export function RecipeItemView({ isWideScreen, content }: RecipeItemViewProps) {
               imageURL={content.acf.banner.url}
             />
             {isWideScreen ? <HeaderFooter /> : null}
+            <VStack maxW={1280} mx="auto">
+              <Stack
+                direction={["column", "column", "row"]}
+                mt="7"
+                mb={["2", "7"]}
+                px="6"
+                spacing={["3.5", "10"]}
+              >
+                <Box w="100%" minW={["100%", "100%", "320px", "414px"]}>
+                  <Image
+                    src={content.acf.side_image.url}
+                    alt={content.acf.side_image.alt}
+                    mx="auto"
+                    w={[null, "100%", null]}
+                    maxW={[null, "414px", null]}
+                  />
+                </Box>
+                <Box>
+                  <Text
+                    dangerouslySetInnerHTML={{ __html: content.acf.resume }}
+                    fontSize={["18", "19", "20", "21", "23"]}
+                    lineHeight={["1.375rem", "1.75rem"]}
+                    fontWeight={400}
+                  />
+                </Box>
+              </Stack>
+              <Stack
+                direction={["column", "column", "row"]}
+                mt="4"
+                px="6"
+                spacing={[null, "6"]}
+              >
+                <Box
+                  bg="yellow.500"
+                  px="4"
+                  py="3"
+                  minW={["100%", "414px", "320px", "414px"]}
+                  height="fit-content"
+                  minH={["100%", "414px"]}
+                  w="fit-content"
+                  mx="auto"
+                >
+                  <Heading size="lg">Ingredientes:</Heading>
+                  <Box
+                    dangerouslySetInnerHTML={{
+                      __html: content.acf.ingredients,
+                    }}
+                    pl="4"
+                    fontSize={["18", "19", "20", "21", "23"]}
+                    lineHeight={["1.8125rem", "2.3125rem"]}
+                  />
+                </Box>
+                <Box px={[null, "6"]} mt="4">
+                  {isWideScreen ? (
+                    <Heading size="lg">Modo de Preparo:</Heading>
+                  ) : (
+                    <Heading size="md">Modo de Preparo:</Heading>
+                  )}
 
-            <Box px="6" my="7">
-              <Image
-                src={content.acf.side_image.url}
-                alt={content.acf.side_image.alt}
-              />
-            </Box>
-            <Box px="6">
-              <Text
-                dangerouslySetInnerHTML={{ __html: content.acf.resume }}
-                fontSize="18"
-                fontWeight={400}
-              />
-            </Box>
-            <Box bg="yellow.500" mx="6" mt="4" px="4" py="3">
-              <Heading size="lg">Ingredientes:</Heading>
-              <Box
-                dangerouslySetInnerHTML={{ __html: content.acf.ingredients }}
-                px="4"
-                fontSize="17"
-              />
-            </Box>
-            <Box px="6" mt="4">
-              <Heading size="md">Modo de Preparo:</Heading>
-              <Box
-                ml="5"
-                dangerouslySetInnerHTML={{ __html: content.acf.cook_tutorial }}
-              />
-              <Box
-                dangerouslySetInnerHTML={{ __html: content.acf.servings }}
-                fontWeight={900}
-              />
-            </Box>
+                  <Box
+                    ml="5"
+                    dangerouslySetInnerHTML={{
+                      __html: content.acf.cook_tutorial,
+                    }}
+                    fontSize={["18", "19", "20", "21", "23"]}
+                    lineHeight={["1.375rem", "1.8175rem"]}
+                  />
+                  <Box
+                    dangerouslySetInnerHTML={{ __html: content.acf.servings }}
+                    fontWeight={900}
+                    fontSize={["18", "19", "20", "21", "23"]}
+                  />
+                </Box>
+              </Stack>
+            </VStack>
           </>
         )}
       </Box>

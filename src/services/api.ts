@@ -25,7 +25,7 @@ type Recipes = {
 };
 
 export const recipesAPI = axios.create({
-  baseURL: "http://localhost:8000/wp-json/wp/v2/receitas",
+  baseURL: "http://localhost:8000/wp-json/wp/v2/receita",
 });
 
 

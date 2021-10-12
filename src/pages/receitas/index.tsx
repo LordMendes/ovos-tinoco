@@ -69,8 +69,9 @@ export default function RecipePage({ recipes }: RecipesPageProps) {
               return (
                 <RecipeItemCard
                   key={item.id}
+                  id={item.id}
                   title={item.title.rendered}
-                  imageURL={item.acf.banner.url}
+                  imageURL={item.acf.side_image.url}
                 />
               );
             })}
