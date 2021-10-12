@@ -16,6 +16,19 @@
   height: 200px;
 }
 
+.numberSlide1:hover {
+  cursor: pointer;
+}
+.numberSlide2:hover {
+  cursor: pointer;
+}
+.numberSlide3:hover {
+  cursor: pointer;
+}
+.numberSlide4:hover {
+  cursor: pointer;
+}
+
 .numberSlide2 {
   background-image: url("../../assets/images/Slide-receita.png");
   background-size: 100% 100%;

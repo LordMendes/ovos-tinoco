@@ -4,6 +4,7 @@ import { Arrow } from "./components/Arrow";
 
 import "keen-slider/keen-slider.min.css";
 import styles from "./styles.module.css";
+import { useHistory } from "react-router-dom";
 
 interface CarouselProps {
   sliderRef: RefObject<HTMLDivElement>;
@@ -18,14 +19,28 @@ export function Carousel({
   currentSlide,
   timeOutId,
 }: CarouselProps) {
+  const { push } = useHistory();
+
   return (
     <>
       <div className={styles.navigationWrapper}>
         <div ref={sliderRef} className={`keen-slider ${styles.keenSlider}`}>
-          <div className={`keen-slider__slide ${styles.numberSlide1}`} />
-          <div className={`keen-slider__slide ${styles.numberSlide2}`} />
-          <div className={`keen-slider__slide ${styles.numberSlide3}`} />
-          <div className={`keen-slider__slide ${styles.numberSlide4}`} />
+          <div
+            className={`keen-slider__slide ${styles.numberSlide1}`}
+            onClick={() => push("/institucional")}
+          />
+          <div
+            className={`keen-slider__slide ${styles.numberSlide2}`}
+            onClick={() => push("/receitas")}
+          />
+          <div
+            className={`keen-slider__slide ${styles.numberSlide3}`}
+            onClick={() => push("/produtos")}
+          />
+          <div
+            className={`keen-slider__slide ${styles.numberSlide4}`}
+            onClick={() => push("/institucional")}
+          />
         </div>
         {slider && (
           <>

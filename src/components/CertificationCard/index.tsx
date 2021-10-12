@@ -14,28 +14,35 @@ export function CertificationCard() {
       <Box>
         <Image
           src="/static/images/h-04-min@3x.png"
-          alt="dasdas"
+          alt="Certificado Organico"
           w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
         />
       </Box>
       <Box>
         <Image
           src="/static/images/h-02-min@3x.png"
-          alt="sad"
+          alt="Certificado Humane brasil"
+          w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
+        />
+      </Box>
+      <Box>
+        <Image
+          src="/static/images/h-03-min.jpg"
+          alt="Certificado IBD"
           w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
         />
       </Box>
       <Box>
         <Image
           src="/static/images/h-05-min@3x.png"
-          alt="dasdas"
+          alt="Certificado Sociedade Vegetariana"
           w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
         />
       </Box>
       <Box>
         <Image
           src="/static/images/h-06-min@3x.png"
-          alt="das"
+          alt="Certificado eureciclo"
           w={["7.5rem", "7.5rem", "7.5rem", "8rem", "10rem"]}
         />
       </Box>
