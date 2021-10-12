@@ -13,8 +13,9 @@ export function CarouselController() {
     duration: 1000,
     loop: true,
   });
-
+  
   useEffect(() => {
+    clearTimeout(timeOutId);
     if (slider !== null) {
       const id = setTimeout(() => {
         slider.next();

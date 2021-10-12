@@ -21,7 +21,7 @@ export function NavbarContextProvider({
 
   useEffect(() => {
     disclosure.onClose();
-  }, [location.pathname]);
+  }, [disclosure, location.pathname]);
 
   return (
     <NavbarDropdownMenuContext.Provider value={disclosure}>

@@ -67,6 +67,7 @@ export function Carousel({
                 key={idx}
                 onClick={() => {
                   slider.moveToSlideRelative(idx);
+                  clearTimeout(timeOutId)
                 }}
                 className={
                   `${styles.dot}` +
