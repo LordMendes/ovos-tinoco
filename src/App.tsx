@@ -11,7 +11,8 @@ import RecipeItem from "./pages/ReceitaItem";
 import Fonts from "./styles/fonts";
 import { theme } from "./styles/theme";
 import { useEffect, useState } from "react";
-import { getRecipes } from "./services/api";
+import { getRecipes, getProducts } from "./services/api";
+import MockPage from "./pages/MockPage";
 
 type ImageData = {
   ID: number;
@@ -19,7 +20,7 @@ type ImageData = {
   url: string;
 };
 
-type ACFData = {
+type ACFRecipeData = {
   banner: ImageData;
   ingredients: string;
   cook_tutorial: string;
@@ -30,16 +31,18 @@ type ACFData = {
 
 type Recipes = {
   id: number;
-  acf: ACFData;
+  acf: ACFRecipeData;
   slug: string;
   title: {
     rendered: string;
   };
 };
 
+
 function App() {
   const [recipes, setRecipes] = useState<Recipes[]>([]);
 
+  console.log(process.env.NODE_ENV)
   useEffect(() => {
     getRecipes().then((res) => setRecipes(res));
   }, []);
@@ -51,7 +54,8 @@ function App() {
         <NavbarContextProvider>
           <ProductsContextProvider>
             <Switch>
-              <Route path="/" exact component={Home} />
+              <Route path="/" exact component={MockPage} />
+              <Route path="/main" exact component={Home} />
               <Route
                 path="/institucional"
                 exact
@@ -61,7 +65,9 @@ function App() {
               <Route path="/receitas" exact>
                 <RecipePage recipes={recipes} />
               </Route>
-              <Route path="/produtos" exact component={ProductPage} />
+              <Route path="/produtos" exact>
+                <ProductPage />
+              </Route>
               <Route path={`/receitas/:id`}>
                 <RecipeItem />
               </Route>

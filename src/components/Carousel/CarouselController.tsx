@@ -22,6 +22,7 @@ export function CarouselController() {
       }, 3000);
       setTimeOutId(id);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slider, currentSlide]);
 
   return (

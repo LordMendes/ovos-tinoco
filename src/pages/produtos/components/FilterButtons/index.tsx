@@ -9,8 +9,7 @@ export function FilterButtons() {
     md: true,
   });
 
-  const { setProductsList, productsListMock, setIsFiltering, isFiltering } =
-    useProducts();
+  const { products, setFilteredProducts ,setIsFiltering, isFiltering } = useProducts();
 
   function handleFilter(type: string) {
     if (type === "all") {
@@ -19,7 +18,7 @@ export function FilterButtons() {
         all: true,
       });
       setTimeout(() => {
-        setProductsList(productsListMock);
+        setFilteredProducts(products);
         setIsFiltering({
           ...isFiltering,
           all: false,
@@ -31,10 +30,10 @@ export function FilterButtons() {
         [type]: true,
       });
       setTimeout(() => {
-        const filteredList = productsListMock.filter(
-          (product) => product.type === type
+        const filteredList = products.filter(
+          (product: any) => product.type === type
         );
-        setProductsList(filteredList);
+        setFilteredProducts(filteredList);
         setIsFiltering({
           ...isFiltering,
           [type]: false,

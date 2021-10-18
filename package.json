@@ -1,5 +1,6 @@
 {
   "name": "react-ovos-tinoco",
+  "homepage": "https://ovostinoco.com.br/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

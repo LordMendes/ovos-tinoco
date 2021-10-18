@@ -9,11 +9,11 @@ export default function ProductPage() {
     sm: true,
   });
 
-  const { productsList, isFiltering } = useProducts();
+  const { filteredProducts, isFiltering } = useProducts();
 
   return (
     <ProductPageView
-      products={productsList}
+      products={filteredProducts}
       isWideScreen={isWideScreen}
       isFiltering={isFiltering}
     />

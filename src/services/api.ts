@@ -25,9 +25,17 @@ type Recipes = {
 };
 
 export const recipesAPI = axios.create({
-  baseURL: "http://localhost:8000/wp-json/wp/v2/receita",
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:8000/wp-json/wp/v2/receitas"
+      : "https://www.ovostinoco.com.br/api/wp-json/wp/v2/receitas",
 });
-
+export const productsAPI = axios.create({
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:8000/wp-json/wp/v2/produtos"
+      : "https://www.ovostinoco.com.br/api/wp-json/wp/v2/produtos",
+});
 
 export async function getRecipes() {
   const response = recipesAPI
@@ -42,7 +50,16 @@ export async function getRecipeItem(id: number) {
   const response = recipesAPI
     .get(`/${id}/`)
     .then((res): Recipes => res.data)
-    .catch(err => err)
+    .catch((err) => err);
+
+  return response;
+}
+
+export async function getProducts() {
+  const response = productsAPI
+    .get("")
+    .then((res) => res.data)
+    .catch((err) => err);
 
   return response;
 }

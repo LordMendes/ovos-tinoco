@@ -8,12 +8,25 @@ import { SubtitleImageCard } from "../../components/SubtitleImageCard";
 import { FilterButtons } from "./components/FilterButtons";
 import { ProductItemCard } from "./components/ProductItemCard";
 
-type Product = {
-  image: string;
-  title: string;
-  amount: number;
-  type: string;
+type ImageData = {
+  ID: number;
+  alt?: string;
+  url: string;
 };
+
+type ACFProductData = {
+  type: string;
+  image: ImageData;
+  amount: number | string;
+};
+
+type Products = {
+  id: number;
+  acf: ACFProductData;
+  title: {
+    rendered: string;
+  }
+}
 
 type FilterType = {
   natura: boolean;
@@ -22,7 +35,7 @@ type FilterType = {
 };
 
 interface ProductsPageViewProps {
-  products: Product[];
+  products: Products[];
   isWideScreen: boolean | undefined;
   isFiltering: FilterType;
 }
@@ -56,7 +69,7 @@ export function ProductPageView({
             rowGap={[null, null, null, "150px"]}
             mx="12"
           >
-            {products.map((item: Product) => {
+            {products.map((item: Products) => {
               return (
                 <ProductItemCard
                   item={item}

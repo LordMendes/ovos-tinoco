@@ -1,12 +1,27 @@
 import { Box, Image, Heading, Text } from "@chakra-ui/react";
 
+type ImageData = {
+  ID: number;
+  alt?: string;
+  url: string;
+};
+
+type ACFProductData = {
+  type: string;
+  image: ImageData;
+  amount: number | string;
+};
+
+type Products = {
+  id: number;
+  acf: ACFProductData;
+  title: {
+    rendered: string;
+  }
+}
+
 interface ProductItemCardProps {
-  item: {
-    image: string;
-    title: string;
-    amount: number;
-    type: string;
-  };
+  item: Products;
   isFiltering: boolean;
 }
 
@@ -14,15 +29,15 @@ export function ProductItemCard({ item, isFiltering }: ProductItemCardProps) {
   return (
     <Box align="center" color="blue.500" opacity={isFiltering ? 0.4 : 1}>
       <Image
-        src={item.image}
-        alt={`Produto ${item.title} ${item.amount}`}
+        src={item.acf.image.url}
+        alt={`Produto ${item.title} ${item.acf.amount}`}
         h="auto"
       />
       <Heading size="md" mt="5">
-        {item.title}
+        {item.title.rendered}
       </Heading>
       <Text fontSize="1rem" fontWeight={300}>
-        {item.amount} unidades
+        {item.acf.amount} unidades
       </Text>
     </Box>
   );

@@ -7,44 +7,64 @@ import {
   useEffect,
   useState,
 } from "react";
+import { getProducts } from "../services/api";
 
-const productsListMock = [
-  {
-    image: "/static/images/branc06.png",
-    title: "Ovos Brancos",
-    amount: 6,
-    type: "liquid",
-  },
-  {
-    image: "/static/images/branco12.png",
-    title: "Ovos Brancos",
-    amount: 12,
-    type: "liquid",
-  },
-  {
-    image: "/static/images/branco40.png",
-    title: "Ovos Brancos",
-    amount: 30,
-    type: "liquid",
-  },
-  {
-    image: "/static/images/caipira12.png",
-    title: "Ovos Vermelhos",
-    amount: 12,
-    type: "natura",
-  },
-  {
-    image: "/static/images/caipira40.png",
-    title: "Ovos Vermelhos",
-    amount: 30,
-    type: "natura",
-  },
-];
-type Product = {
-  image: string;
-  title: string;
-  amount: number;
+// const productsListMock = [
+//   {
+//     image: "/static/images/branc06.png",
+//     title: "Ovos Brancos",
+//     amount: 6,
+//     type: "liquid",
+//   },
+//   {
+//     image: "/static/images/branco12.png",
+//     title: "Ovos Brancos",
+//     amount: 12,
+//     type: "liquid",
+//   },
+//   {
+//     image: "/static/images/branco40.png",
+//     title: "Ovos Brancos",
+//     amount: 30,
+//     type: "liquid",
+//   },
+//   {
+//     image: "/static/images/caipira12.png",
+//     title: "Ovos Vermelhos",
+//     amount: 12,
+//     type: "natura",
+//   },
+//   {
+//     image: "/static/images/caipira40.png",
+//     title: "Ovos Vermelhos",
+//     amount: 30,
+//     type: "natura",
+//   },
+// ];
+// type Product = {
+//   image: string;
+//   title: string;
+//   amount: number;
+//   type: string;
+// };
+type ImageData = {
+  ID: number;
+  alt?: string;
+  url: string;
+};
+
+type ACFProductData = {
   type: string;
+  image: ImageData;
+  amount: number | string;
+};
+
+type Products = {
+  id: number;
+  acf: ACFProductData;
+  title: {
+    rendered: string;
+  };
 };
 
 type FilterType = {
@@ -54,9 +74,9 @@ type FilterType = {
 };
 
 type ProductsContextData = {
-  productsList: Product[];
-  setProductsList: Dispatch<SetStateAction<Product[]>>;
-  productsListMock: Product[];
+  products: Products[];
+  filteredProducts: Products[];
+  setFilteredProducts: Dispatch<SetStateAction<Products[]>>;
   isFiltering: FilterType;
   setIsFiltering: Dispatch<SetStateAction<FilterType>>;
 };
@@ -70,7 +90,8 @@ interface ProductsContextProviderProps {
 export function ProductsContextProvider({
   children,
 }: ProductsContextProviderProps) {
-  const [productsList, setProductsList] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Products[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Products[]>([]);
   const [isFiltering, setIsFiltering] = useState({
     natura: false,
     liquid: false,
@@ -78,17 +99,18 @@ export function ProductsContextProvider({
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      setProductsList(productsListMock);
-    }, 500);
+    getProducts().then((res) => {
+      setProducts(res);
+      setFilteredProducts(res);
+    });
   }, []);
 
   return (
     <ProductsContext.Provider
       value={{
-        productsList,
-        setProductsList,
-        productsListMock,
+        products,
+        setFilteredProducts,
+        filteredProducts,
         setIsFiltering,
         isFiltering,
       }}
