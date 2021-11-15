@@ -32,10 +32,12 @@ export default function InstitutionalPage() {
         <Flex direction="column" align="center" mx="6">
           <Heading
             color="blue.500"
-            fontSize="23"
+            fontSize={["19", "23"]}
             mt="10"
-            fontWeight="900"
+            fontWeight={["800", "900"]}
             textTransform="uppercase"
+            letterSpacing={0}
+            lineHeight={["29px", "36px"]}
           >
             A nossa fazenda conta com uma longa e envolvente história de três
             gerações,

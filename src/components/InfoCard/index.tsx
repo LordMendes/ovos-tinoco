@@ -63,7 +63,7 @@ export function InfoCard({
           >
             {subtitle}
           </Heading>
-          <Text fontWeight={300} my="4" fontSize={["xl", "md", "md", "xl"]}>
+          <Text fontWeight={300} my="4" fontSize={["19", "md", "md", "19"]}>
             {paragraph}
           </Text>
         </Box>
@@ -78,7 +78,13 @@ export function InfoCard({
       mb={["2", "2", "-6"]}
       maxW={["100%", "720px", "720px", "1120px"]}
     >
-      <Box mr={["0", "6", "6", "10", "24"]} w={["100%", "100%", "50%"]}>
+      <Box
+        mr={["0", "6", "6", "10", "24"]}
+        w={["100%", "100%", "50%"]}
+        display="flex"
+        flexDirection='column'
+        justifyContent="center"
+      >
         <Heading
           fontSize={["22", "22", "22", "28", "34"]}
           fontWeight={900}
@@ -93,13 +99,12 @@ export function InfoCard({
         >
           {subtitle}
         </Heading>
-        <Text fontWeight={300} my="4" fontSize={["xl", "md", "md", "xl"]}>
+        <Text fontWeight={300} my="4" fontSize={["19", "md", "md", "19"]}>
           {paragraph}
         </Text>
       </Box>
       <Flex
         w={["100%", "100%", "50%"]}
-        py={["0", "0", "8"]}
         justifyContent="center"
         alignItems="center"
       >

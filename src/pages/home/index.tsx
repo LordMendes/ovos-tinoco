@@ -38,7 +38,7 @@ export default function Home() {
       <Stack
         direction={["column", "row"]}
         maxW="1150px"
-        mt={["4", "8", "16", "8", "12"]}
+        mt={["4", "16"]}
         mx={["4", "10", "16", "20"]}
         spacing={["", "6", "10", "16", "24"]}
       >
@@ -59,7 +59,13 @@ export default function Home() {
           isWideScreen={isWideScreen}
         />
       </Stack>
-      <Box as="section" mx={["6", "12", "16", "20"]} mb="32">
+      <Box
+        as="section"
+        px={["6", "12", "16", "20"]}
+        mb="32"
+        mt={["0", "6"]}
+        w="100%"
+      >
         <NewsletterCardFormController />
       </Box>
       <Footer />

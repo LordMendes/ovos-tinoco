@@ -14,7 +14,7 @@ type NewsLetterFormData = {
 };
 
 export function NewsletterCardFormController() {
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState, reset } = useForm({
     resolver: yupResolver(newsletterValidationSchema),
   });
 
@@ -23,8 +23,15 @@ export function NewsletterCardFormController() {
   const handleSignNewsletter: SubmitHandler<NewsLetterFormData> = async (
     values: NewsLetterFormData
   ) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(values);
+    await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(values);
+      reset();
+    }, 2000)
+  );
+  console.log(values);
+  
+  // await axios.post("https://formsubmit.co/feliciovcm@gmail.com", values);
   };
 
   return (

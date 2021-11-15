@@ -41,7 +41,7 @@ export async function getRecipes() {
   const response = recipesAPI
     .get("")
     .then((res) => res.data)
-    .catch((err) => err);
+    .catch(() => []);
 
   return response;
 }
@@ -59,7 +59,7 @@ export async function getProducts() {
   const response = productsAPI
     .get("")
     .then((res) => res.data)
-    .catch((err) => err);
+    .catch(() => []);
 
   return response;
 }

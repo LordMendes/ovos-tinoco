@@ -61,7 +61,10 @@ export function ContactForm({ ufs }: ContactFormProps) {
         reset();
       }, 2000)
     );
-    // await axios.post("https://formsubmit.co/feliciovcm@gmail.com", values);
+    await axios.post(
+      `https://formsubmit.co/${process.env.REACT_APP_TINOCO_EMAIL}`,
+      values
+    );
   };
 
   function handleStateChosen(value: any) {

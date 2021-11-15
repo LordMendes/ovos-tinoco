@@ -11,8 +11,8 @@ import RecipeItem from "./pages/ReceitaItem";
 import Fonts from "./styles/fonts";
 import { theme } from "./styles/theme";
 import { useEffect, useState } from "react";
-import { getRecipes, getProducts } from "./services/api";
-import MockPage from "./pages/MockPage";
+import { getRecipes } from "./services/api";
+// import MockPage from "./pages/MockPage";
 
 type ImageData = {
   ID: number;
@@ -52,8 +52,8 @@ function App() {
         <NavbarContextProvider>
           <ProductsContextProvider>
             <Switch>
-              <Route path="/" exact component={MockPage} />
-              <Route path="/main" exact component={Home} />
+              {/* <Route path="/" exact component={MockPage} /> */}
+              <Route path="/" exact component={Home} />
               <Route
                 path="/institucional"
                 exact

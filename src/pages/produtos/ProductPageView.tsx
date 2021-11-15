@@ -25,8 +25,8 @@ type Products = {
   acf: ACFProductData;
   title: {
     rendered: string;
-  }
-}
+  };
+};
 
 type FilterType = {
   natura: boolean;
@@ -41,10 +41,12 @@ interface ProductsPageViewProps {
 }
 
 export function ProductPageView({
-  products,
+  products = [],
   isWideScreen,
   isFiltering,
 }: ProductsPageViewProps) {
+  console.log(products);
+  
   return (
     <Container>
       <NavbarMobileScreen />
