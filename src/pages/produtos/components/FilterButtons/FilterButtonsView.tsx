@@ -6,7 +6,7 @@ interface FilterButtonsViewProps {
   isFiltering: {
     natura: boolean;
     all: boolean;
-    liquid: boolean;
+    liquido: boolean;
   };
 }
 
@@ -47,8 +47,8 @@ export function FilterButtonsView({
           colorScheme="yellow"
           borderRadius="xl"
           minW="162px"
-          onClick={() => onFilter("liquid")}
-          isLoading={isFiltering.liquid}
+          onClick={() => onFilter("liquido")}
+          isLoading={isFiltering.liquido}
         >
           Ovos Líquidos
         </Button>
@@ -104,8 +104,8 @@ export function FilterButtonsView({
           colorScheme="yellow"
           borderRadius="xl"
           minW="162px"
-          onClick={() => onFilter("liquid")}
-          isLoading={isFiltering.liquid}
+          onClick={() => onFilter("liquido")}
+          isLoading={isFiltering.liquido}
         >
           Ovos Líquidos
         </Button>

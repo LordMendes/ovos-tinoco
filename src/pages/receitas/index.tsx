@@ -35,7 +35,7 @@ interface RecipesPageProps {
   recipes: Recipes[];
 }
 
-export default function RecipePage({ recipes }: RecipesPageProps) {
+export default function RecipePage({ recipes = [] }: RecipesPageProps) {
   const isWideScreen = useBreakpointValue({
     base: false,
     sm: true,
@@ -65,16 +65,18 @@ export default function RecipePage({ recipes }: RecipesPageProps) {
             w="100%"
             maxW="1440px"
           >
-            {recipes.map((item) => {
-              return (
-                <RecipeItemCard
-                  key={item.id}
-                  id={item.id}
-                  title={item.title.rendered}
-                  imageURL={item.acf.side_image.url}
-                />
-              );
-            })}
+            {recipes.length > 0
+              ? recipes.map((item) => {
+                  return (
+                    <RecipeItemCard
+                      key={item.id}
+                      id={item.id}
+                      title={item.title.rendered}
+                      imageURL={item.acf.side_image.url}
+                    />
+                  );
+                })
+              : null}
           </SimpleGrid>
         </Flex>
       </Box>

@@ -38,11 +38,9 @@ type Recipes = {
   };
 };
 
-
 function App() {
   const [recipes, setRecipes] = useState<Recipes[]>([]);
 
-  console.log(process.env.NODE_ENV)
   useEffect(() => {
     getRecipes().then((res) => setRecipes(res));
   }, []);

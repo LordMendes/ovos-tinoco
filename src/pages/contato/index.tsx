@@ -6,12 +6,32 @@ import { SubtitleImageCard } from "../../components/SubtitleImageCard";
 import { HeaderFooter } from "../../components/HeaderFooter";
 import { ContactForm } from "./components/ContactForm";
 import { Container } from "../../components/Container";
+import { useEffect, useState } from "react";
+import { getBrazilStates } from "../../services/ibgeApi";
+
+type Ufs = {
+  id: number;
+  nome: string;
+  regiao: { id: number; sigla: string; nome: string };
+  sigla: string;
+};
 
 export default function ContactPage() {
   const isWideScreen = useBreakpointValue({
     base: false,
     sm: true,
   });
+
+  const [ufs, setUfs] = useState<Ufs[]>([]);
+
+  useEffect(() => {
+    async function callStates() {
+      const response = await getBrazilStates();
+      setUfs(response);
+    }
+    callStates();
+  }, []);
+
   return (
     <Container>
       <NavbarMobileScreen />
@@ -34,7 +54,7 @@ export default function ContactPage() {
         <Text align="center" color="blue.500" mt="2" fontSize={["14", "1rem"]}>
           Por favor, preencha todos os campos abaixo.
         </Text>
-        <ContactForm />
+        <ContactForm ufs={ufs} />
       </Box>
       <Footer />
     </Container>

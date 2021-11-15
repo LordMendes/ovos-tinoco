@@ -36,8 +36,6 @@ interface RecipeItemViewProps {
 }
 
 export function RecipeItemView({ isWideScreen, content }: RecipeItemViewProps) {
-  console.log(content);
-
   return (
     <Container>
       <NavbarMobileScreen />

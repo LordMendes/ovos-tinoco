@@ -101,7 +101,7 @@ export function NewsletterCardForm({
           >
             <Text
               color="blue.500"
-              fontSize={["11", "12", "12", "15", "18"]}
+              fontSize={["11", "12", "12", "15", "16"]}
               align="right"
               w="100%"
               mt={["", "20%", "25%", "25%", "20%"]}

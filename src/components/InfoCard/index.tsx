@@ -9,8 +9,8 @@ import {
 
 interface InfoCardProps {
   imageURL: string;
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   paragraph: string;
   isRight?: boolean;
 }

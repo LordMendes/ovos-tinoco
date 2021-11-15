@@ -30,7 +30,7 @@ type Products = {
 
 type FilterType = {
   natura: boolean;
-  liquid: boolean;
+  liquido: boolean;
   all: boolean;
 };
 
@@ -74,7 +74,7 @@ export function ProductPageView({
                 <ProductItemCard
                   item={item}
                   isFiltering={
-                    isFiltering.all || isFiltering.liquid || isFiltering.natura
+                    isFiltering.all || isFiltering.liquido || isFiltering.natura
                   }
                 />
               );

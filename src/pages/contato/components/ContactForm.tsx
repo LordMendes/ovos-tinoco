@@ -5,6 +5,16 @@ import { Box, SimpleGrid, Button } from "@chakra-ui/react";
 import { Input } from "../../../components/Form/Input";
 import { Select } from "../../../components/Form/Select";
 import { Textarea } from "../../../components/Form/Textarea";
+import { useEffect, useState } from "react";
+import { getCitiesFromUf } from "../../../services/ibgeApi";
+import axios from "axios";
+
+type Ufs = {
+  id: number;
+  nome: string;
+  regiao: { id: number; sigla: string; nome: string };
+  sigla: string;
+};
 
 type ContactFormData = {
   userName: string;
@@ -12,18 +22,31 @@ type ContactFormData = {
   phone: string;
 };
 
+type City = {
+  id: number;
+  nome: string;
+};
+
+interface ContactFormProps {
+  ufs: Array<Ufs>;
+}
+
 const ContactFormValidationSchema = Yup.object().shape({
   userName: Yup.string().required("Nome obrigatório"),
   email: Yup.string().required("E-mail obrigatório").email("E-mail inválido"),
   phone: Yup.string().required("Telefone obrigatório"),
-  subject: Yup.string().required("Assunto obrigatório"),
+  subject: Yup.string(),
+  // subject: Yup.string().required("Assunto obrigatório"),
   state: Yup.string().required("Estado obrigatório"),
   city: Yup.string().required("Cidade obrigatória"),
   message: Yup.string().required("Messagem obrigatória"),
 });
 
-export function ContactForm() {
-  const { register, handleSubmit, formState } = useForm({
+export function ContactForm({ ufs }: ContactFormProps) {
+  const [isUfChosen, setIsUfChosen] = useState({ chosen: false, ufID: "" });
+  const [cities, setCities] = useState<City[]>([]);
+
+  const { register, handleSubmit, formState, reset } = useForm({
     resolver: yupResolver(ContactFormValidationSchema),
   });
 
@@ -32,9 +55,31 @@ export function ContactForm() {
   const handleSignNewsletter: SubmitHandler<ContactFormData> = async (
     values: ContactFormData
   ) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(values);
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(values);
+        reset();
+      }, 2000)
+    );
+    // await axios.post("https://formsubmit.co/feliciovcm@gmail.com", values);
   };
+
+  function handleStateChosen(value: any) {
+    if (!!value.target.value) {
+      const chosenUf = ufs.find((item) => item.nome === value.target.value)!;
+      setIsUfChosen({ chosen: true, ufID: String(chosenUf.id) });
+    } else setIsUfChosen({ chosen: false, ufID: "" });
+  }
+
+  useEffect(() => {
+    async function callCities() {
+      const response = await getCitiesFromUf(isUfChosen.ufID);
+      setCities(response);
+    }
+    if (isUfChosen.ufID) {
+      callCities();
+    }
+  }, [isUfChosen]);
 
   return (
     <Box
@@ -72,7 +117,7 @@ export function ContactForm() {
           placeholder="Seu telefone aqui"
           type="tel"
           borderRadius="4"
-          {...register("email")}
+          {...register("phone")}
           error={errors.phone}
           minH="26px"
         />
@@ -93,6 +138,12 @@ export function ContactForm() {
           {...register("state")}
           error={errors.state}
           minH="33px"
+          options={ufs.map((item) => ({
+            id: item.id,
+            label: item.nome,
+            value: item.nome,
+          }))}
+          onChange={(e) => handleStateChosen(e)}
         />
         <Select
           fieldName="city"
@@ -102,15 +153,27 @@ export function ContactForm() {
           {...register("city")}
           error={errors.city}
           minH="33px"
-          isDisabled
+          isDisabled={!isUfChosen.chosen}
+          options={cities.map((item) => ({
+            id: item.id,
+            label: item.nome,
+            value: item.nome,
+          }))}
         />
       </SimpleGrid>
       <Textarea
         fieldName="message"
         label="Mensagem"
         placeholder="Digite aqui sua mensagem"
+        {...register("message")}
         error={errors.message}
         rows={8}
+      />
+      <Input
+        fieldName="_captcha"
+        type="hidden"
+        {...register("_captcha")}
+        value="false"
       />
       <Button
         bg="#0060AF"

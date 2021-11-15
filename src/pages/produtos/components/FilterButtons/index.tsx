@@ -3,13 +3,34 @@ import { useBreakpointValue } from "@chakra-ui/react";
 import { useProducts } from "../../../../contexts/ProductsContext";
 import { FilterButtonsView } from "./FilterButtonsView";
 
+type ImageData = {
+  ID: number;
+  alt?: string;
+  url: string;
+};
+
+type ACFProductData = {
+  type: string;
+  image: ImageData;
+  amount: number | string;
+};
+
+type Products = {
+  id: number;
+  acf: ACFProductData;
+  title: {
+    rendered: string;
+  };
+};
+
 export function FilterButtons() {
   const isWideScreen = useBreakpointValue({
     base: false,
     md: true,
   });
 
-  const { products, setFilteredProducts ,setIsFiltering, isFiltering } = useProducts();
+  const { products, setFilteredProducts, setIsFiltering, isFiltering } =
+    useProducts();
 
   function handleFilter(type: string) {
     if (type === "all") {
@@ -31,7 +52,7 @@ export function FilterButtons() {
       });
       setTimeout(() => {
         const filteredList = products.filter(
-          (product: any) => product.type === type
+          (product: Products) => product.acf.type === type
         );
         setFilteredProducts(filteredList);
         setIsFiltering({

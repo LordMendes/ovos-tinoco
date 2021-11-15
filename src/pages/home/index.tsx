@@ -1,5 +1,4 @@
 import { Box, Stack, useBreakpointValue } from "@chakra-ui/react";
-import { CertificationCard } from "../../components/CertificationCard";
 import { Footer } from "../../components/Footer";
 import { InfoCard } from "../../components/InfoCard";
 import { MarketingCard } from "../../components/MarketingCard";
@@ -60,9 +59,8 @@ export default function Home() {
           isWideScreen={isWideScreen}
         />
       </Stack>
-      <Box as="section" mx={["6", "12", "16", "20"]}>
+      <Box as="section" mx={["6", "12", "16", "20"]} mb="32">
         <NewsletterCardFormController />
-        <CertificationCard />
       </Box>
       <Footer />
     </Container>

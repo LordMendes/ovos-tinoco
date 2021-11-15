@@ -69,7 +69,7 @@ type Products = {
 
 type FilterType = {
   natura: boolean;
-  liquid: boolean;
+  liquido: boolean;
   all: boolean;
 };
 
@@ -94,7 +94,7 @@ export function ProductsContextProvider({
   const [filteredProducts, setFilteredProducts] = useState<Products[]>([]);
   const [isFiltering, setIsFiltering] = useState({
     natura: false,
-    liquid: false,
+    liquido: false,
     all: false,
   });
 

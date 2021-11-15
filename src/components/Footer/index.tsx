@@ -64,29 +64,29 @@ export function Footer() {
               <Stack direction="column">
                 <Link to="/">
                   <ChakraLink>
-                    <Text>início</Text>
+                    <Text _hover={{ opacity: "0.8" }}>início</Text>
                   </ChakraLink>
                 </Link>
                 <Link to="/institucional">
                   <ChakraLink>
-                    <Text>Institucional</Text>
+                    <Text _hover={{ opacity: "0.8" }}>Institucional</Text>
                   </ChakraLink>
                 </Link>
                 <Link to="/produtos">
                   <ChakraLink>
-                    <Text>Produtos</Text>
+                    <Text _hover={{ opacity: "0.8" }}>Produtos</Text>
                   </ChakraLink>
                 </Link>
               </Stack>
               <Stack direction="column">
                 <Link to="/receitas">
                   <ChakraLink>
-                    <Text>Receitas</Text>
+                    <Text _hover={{ opacity: "0.8" }}>Receitas</Text>
                   </ChakraLink>
                 </Link>
                 <Link to="/contato">
                   <ChakraLink>
-                    <Text>Contato</Text>
+                    <Text _hover={{ opacity: "0.8" }}>Contato</Text>
                   </ChakraLink>
                 </Link>
               </Stack>
@@ -94,7 +94,7 @@ export function Footer() {
           )}
           {!isWideScreen ? (
             <Text mt="2.5" color="white" fontSize="14" align="center">
-              +55 14 0000-0000 - contato@ovostinoco.com.br <br /> Fazenda Santa
+              14 0000-0000 - contato@ovostinoco.com.br <br /> Fazenda Santa
               Maria, S/N Guarantã-SP
             </Text>
           ) : (
@@ -103,7 +103,7 @@ export function Footer() {
               align="left"
               fontSize={["14", "14", "14", "14", "24"]}
             >
-              <Text>+55 14 0000-0000</Text>
+              <Text>14 0000-0000</Text>
               <Text>contato@ovostinoco.com.br</Text>
               <Text> Fazenda Santa Maria, S/N Guarantã-SP</Text>
             </VStack>
