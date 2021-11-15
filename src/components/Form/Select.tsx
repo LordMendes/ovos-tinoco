@@ -18,10 +18,19 @@ interface SelectProps extends ChakraSelectProps {
     id: any;
   }>;
   handleValueChosen?: (value: any) => void;
+  hasValue?: boolean;
 }
 
 const SelectBase: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (
-  { fieldName, handleValueChosen, label, error = null, options = [], ...rest },
+  {
+    fieldName,
+    handleValueChosen,
+    hasValue,
+    label,
+    error = null,
+    options = [],
+    ...rest
+  },
   ref
 ) => {
   return (
@@ -37,8 +46,8 @@ const SelectBase: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (
         id={fieldName}
         border="1px"
         bgColor="white"
-        color="gray.400"
         variant="unstyled"
+        color={hasValue ? "gray.700" : "gray.400"}
         borderBlockEndColor="blue.500"
         borderBlockStartColor="blue.500"
         borderInlineEndColor="blue.500"

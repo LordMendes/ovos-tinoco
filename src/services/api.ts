@@ -27,14 +27,14 @@ type Recipes = {
 export const recipesAPI = axios.create({
   baseURL:
     process.env.NODE_ENV === "development"
-      ? "http://localhost:8000/wp-json/wp/v2/receitas"
-      : "https://www.ovostinoco.com.br/api/wp-json/wp/v2/receitas",
+      ? process.env.REACT_APP_RECIPE_URL_DEV
+      : process.env.REACT_APP_RECIPE_URL_PRD,
 });
 export const productsAPI = axios.create({
   baseURL:
     process.env.NODE_ENV === "development"
-      ? "http://localhost:8000/wp-json/wp/v2/produtos"
-      : "https://www.ovostinoco.com.br/api/wp-json/wp/v2/produtos",
+      ? process.env.REACT_APP_PRODUCT_URL_DEV
+      : process.env.REACT_APP_PRODUCT_URL_PRD,
 });
 
 export async function getRecipes() {

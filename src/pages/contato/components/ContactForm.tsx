@@ -39,20 +39,31 @@ const ContactFormValidationSchema = Yup.object().shape({
   userName: Yup.string().required("Nome obrigatório"),
   email: Yup.string().required("E-mail obrigatório").email("E-mail inválido"),
   phone: Yup.string().required("Telefone obrigatório"),
-  subject: Yup.string(),
-  // subject: Yup.string().required("Assunto obrigatório"),
+  subject: Yup.string().required("Assunto obrigatório"),
   state: Yup.string().required("Estado obrigatório"),
   city: Yup.string().required("Cidade obrigatória"),
   message: Yup.string().required("Messagem obrigatória"),
 });
 
+const subjectList = [
+  { id: 1, label: "Sugestão", value: "Sugestão" },
+  { id: 2, label: "Reclamação", value: "Reclamação" },
+  { id: 3, label: "Elogio", value: "Elogio" },
+  { id: 4, label: "Vendas", value: "Vendas" },
+];
+
 export function ContactForm({ ufs }: ContactFormProps) {
   const [isUfChosen, setIsUfChosen] = useState({ chosen: false, ufID: "" });
   const [cities, setCities] = useState<City[]>([]);
 
-  const { register, handleSubmit, formState, reset } = useForm({
-    resolver: yupResolver(ContactFormValidationSchema),
-  });
+  const { register, handleSubmit, formState, reset, watch, setValue } = useForm(
+    {
+      resolver: yupResolver(ContactFormValidationSchema),
+    }
+  );
+  const ufState = watch("state");
+  const cityState = watch("city");
+  const subjectState = watch("subject");
 
   const { errors, isSubmitting } = formState;
 
@@ -68,22 +79,19 @@ export function ContactForm({ ufs }: ContactFormProps) {
       estado: values.state,
       cidade: values.city,
       mensagem: values.message,
+      _captcha: "false",
+      _template: "box",
     };
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(values);
-        reset();
-      }, 2000)
-    );
-    console.log(data);
 
-    // await axios.post(
-    //   `https://formsubmit.co/${process.env.REACT_APP_TINOCO_EMAIL}`,
-    //   data
-    // );
+    await axios.post(
+      `https://formsubmit.co/${process.env.REACT_APP_TINOCO_EMAIL}`,
+      data
+    );
+    reset();
   };
 
   function handleStateChosen(value: any) {
+    setValue("state", value.target.value);
     if (!!value.target.value) {
       const chosenUf = ufs.find((item) => item.nome === value.target.value)!;
       setIsUfChosen({ chosen: true, ufID: String(chosenUf.id) });
@@ -146,8 +154,11 @@ export function ContactForm({ ufs }: ContactFormProps) {
           placeholder="Selecione qual assunto deseja tratar"
           borderRadius="4"
           {...register("subject")}
+          options={subjectList}
+          hasValue={!!subjectState}
           error={errors.subject}
           minH="33px"
+          onChange={(e) => setValue("subject", e.target.value)}
         />
         <Select
           fieldName="state"
@@ -157,6 +168,7 @@ export function ContactForm({ ufs }: ContactFormProps) {
           {...register("state")}
           error={errors.state}
           minH="33px"
+          hasValue={!!ufState}
           options={ufs.map((item) => ({
             id: item.id,
             label: item.nome,
@@ -171,6 +183,7 @@ export function ContactForm({ ufs }: ContactFormProps) {
           borderRadius="4"
           {...register("city")}
           error={errors.city}
+          hasValue={!!cityState}
           minH="33px"
           isDisabled={!isUfChosen.chosen}
           options={cities.map((item) => ({
@@ -178,6 +191,7 @@ export function ContactForm({ ufs }: ContactFormProps) {
             label: item.nome,
             value: item.nome,
           }))}
+          onChange={(e) => setValue("city", e.target.value)}
         />
       </SimpleGrid>
       <Textarea
@@ -187,12 +201,6 @@ export function ContactForm({ ufs }: ContactFormProps) {
         {...register("message")}
         error={errors.message}
         rows={8}
-      />
-      <Input
-        fieldName="_captcha"
-        type="hidden"
-        {...register("_captcha")}
-        value="false"
       />
       <Button
         bg="#0060AF"

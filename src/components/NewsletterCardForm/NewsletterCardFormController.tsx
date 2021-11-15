@@ -2,6 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { NewsletterCardForm } from "./index";
+import axios from "axios";
 
 const newsletterValidationSchema = Yup.object().shape({
   userName: Yup.string().required("Nome obrigatório"),
@@ -27,17 +28,15 @@ export function NewsletterCardFormController() {
       formulario: "NEWSLETTER",
       usuario: values.userName,
       email: values.email,
+      _captcha: "false",
+      _template: "basic",
     };
 
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(values);
-        reset();
-      }, 2000)
+    await axios.post(
+      `https://formsubmit.co/${process.env.REACT_APP_TINOCO_EMAIL}`,
+      data
     );
-    console.log(values);
-
-    // await axios.post("https://formsubmit.co/feliciovcm@gmail.com", data);
+    reset();
   };
 
   return (

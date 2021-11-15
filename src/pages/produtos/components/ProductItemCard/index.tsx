@@ -17,8 +17,8 @@ type Products = {
   acf: ACFProductData;
   title: {
     rendered: string;
-  }
-}
+  };
+};
 
 interface ProductItemCardProps {
   item: Products;
@@ -34,6 +34,7 @@ export function ProductItemCard({ item, isFiltering }: ProductItemCardProps) {
         h="auto"
         border="1px solid #D3D3D3"
         borderRadius="10px"
+        w='100%'
       />
       <Heading size="md" mt="5">
         {item.title.rendered}

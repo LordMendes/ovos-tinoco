@@ -45,8 +45,6 @@ export function ProductPageView({
   isWideScreen,
   isFiltering,
 }: ProductsPageViewProps) {
-  console.log(products);
-  
   return (
     <Container>
       <NavbarMobileScreen />

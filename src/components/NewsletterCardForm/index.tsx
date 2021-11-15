@@ -126,12 +126,6 @@ export function NewsletterCardForm({
               {...register("email")}
               error={errors.email}
             />
-            <Input
-              fieldName="_captcha"
-              type="hidden"
-              {...register("_captcha")}
-              value="false"
-            />
             <Button
               bg="yellow.500"
               color="white"
