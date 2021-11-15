@@ -20,6 +20,10 @@ type ContactFormData = {
   userName: string;
   email: string;
   phone: string;
+  subject: string;
+  city: string;
+  state: string;
+  message: string;
 };
 
 type City = {
@@ -55,16 +59,28 @@ export function ContactForm({ ufs }: ContactFormProps) {
   const handleSignNewsletter: SubmitHandler<ContactFormData> = async (
     values: ContactFormData
   ) => {
+    const data = {
+      formulario: "CONTATO",
+      nome: values.userName,
+      email: values.email,
+      telefone: values.phone,
+      assunto: values.subject,
+      estado: values.state,
+      cidade: values.city,
+      mensagem: values.message,
+    };
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve(values);
         reset();
       }, 2000)
     );
-    await axios.post(
-      `https://formsubmit.co/${process.env.REACT_APP_TINOCO_EMAIL}`,
-      values
-    );
+    console.log(data);
+
+    // await axios.post(
+    //   `https://formsubmit.co/${process.env.REACT_APP_TINOCO_EMAIL}`,
+    //   data
+    // );
   };
 
   function handleStateChosen(value: any) {

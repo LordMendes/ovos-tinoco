@@ -23,15 +23,21 @@ export function NewsletterCardFormController() {
   const handleSignNewsletter: SubmitHandler<NewsLetterFormData> = async (
     values: NewsLetterFormData
   ) => {
+    const data = {
+      formulario: "NEWSLETTER",
+      usuario: values.userName,
+      email: values.email,
+    };
+
     await new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(values);
-      reset();
-    }, 2000)
-  );
-  console.log(values);
-  
-  // await axios.post("https://formsubmit.co/feliciovcm@gmail.com", values);
+      setTimeout(() => {
+        resolve(values);
+        reset();
+      }, 2000)
+    );
+    console.log(values);
+
+    // await axios.post("https://formsubmit.co/feliciovcm@gmail.com", data);
   };
 
   return (
