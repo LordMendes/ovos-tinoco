@@ -39,7 +39,7 @@ export function RecipeInviteCard() {
           <Link to="/receitas">
             <Button
               as="a"
-              fontWeight={300}
+              fontWeight={500}
               p={["2", "4", "4", "6", "7"]}
               bg="white"
               fontSize={["12", "14", "14", "16", "22"]}

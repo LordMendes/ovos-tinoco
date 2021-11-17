@@ -37,9 +37,11 @@ export const productsAPI = axios.create({
       : process.env.REACT_APP_PRODUCT_URL_PRD,
 });
 
-export async function getRecipes() {
+export const itemPerPage = 6;
+
+export async function getRecipes(page: number) {
   const response = recipesAPI
-    .get("")
+    .get(`?per_page=${itemPerPage}&page=${page}`)
     .then((res) => res.data)
     .catch(() => []);
 

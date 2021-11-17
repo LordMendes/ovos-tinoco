@@ -25,7 +25,7 @@ export function FilterButtonsView({
           width="fit-content"
           p="7"
           h="2px"
-          fontWeight={300}
+          fontWeight={500}
           type="submit"
           colorScheme="yellow"
           borderRadius="xl"
@@ -42,7 +42,7 @@ export function FilterButtonsView({
           width="fit-content"
           p="7"
           h="2px"
-          fontWeight={300}
+          fontWeight={500}
           type="submit"
           colorScheme="yellow"
           borderRadius="xl"
@@ -59,7 +59,7 @@ export function FilterButtonsView({
           width="fit-content"
           p="7"
           h="2px"
-          fontWeight={300}
+          fontWeight={500}
           type="submit"
           colorScheme="yellow"
           borderRadius="xl"
@@ -82,7 +82,7 @@ export function FilterButtonsView({
           width="fit-content"
           p="6"
           h="2px"
-          fontWeight={300}
+          fontWeight={500}
           type="submit"
           colorScheme="yellow"
           borderRadius="xl"
@@ -99,7 +99,7 @@ export function FilterButtonsView({
           width="fit-content"
           p="6"
           h="2px"
-          fontWeight={300}
+          fontWeight={500}
           type="submit"
           colorScheme="yellow"
           borderRadius="xl"
@@ -118,7 +118,7 @@ export function FilterButtonsView({
           width="fit-content"
           p="6"
           h="2px"
-          fontWeight={300}
+          fontWeight={500}
           type="submit"
           colorScheme="yellow"
           borderRadius="xl"

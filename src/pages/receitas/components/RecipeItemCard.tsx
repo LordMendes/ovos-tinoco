@@ -50,7 +50,7 @@ export function RecipeItemCard({ title, imageURL, id }: RecipeItemCardProps) {
           h={["10", "10", "10", "12"]}
           mx="auto"
           mt="6"
-          fontWeight={300}
+          fontWeight={500}
           type="button"
           colorScheme="yellow"
           onClick={() => push(`/receitas/${id}`)}
