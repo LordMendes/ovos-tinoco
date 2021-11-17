@@ -112,12 +112,11 @@ export default function RecipePage() {
               colorScheme="blue"
               cursor="pointer"
               fontWeight={500}
-              p={["2", "4", "4", "6", "7"]}
+              p="7"
               bg="blue.500"
-              fontSize={["12", "14", "14", "16", "22"]}
+              fontSize="22"
               color="white"
-              h={["6", "8", "2", "8"]}
-              mt={["0", "2", "3", "3", "4"]}
+              mt={["8", "12"]}
               onClick={() => handleLoadNextPage()}
               isLoading={loading}
             >
