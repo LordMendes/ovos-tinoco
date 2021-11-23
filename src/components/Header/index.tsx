@@ -19,9 +19,9 @@ interface HeaderProps {
 export function Header({ isWideScreen, onOpen }: HeaderProps) {
   function handleClick(socialMedia: string) {
     if (socialMedia === "facebook") {
-      return window.open("https://www.facebook.com", "_blank");
+      return window.open("https://www.facebook.com/Ovos-Tino%CC%82co-103594788274545", "_blank");
     }
-    return window.open("https://www.instagram.com", "_blank");
+    return window.open("https://instagram.com/ovostinoco", "_blank");
   }
   return (
     <>

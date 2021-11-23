@@ -7,6 +7,7 @@ import { Select } from "../../../components/Form/Select";
 import { Textarea } from "../../../components/Form/Textarea";
 import { useEffect, useState } from "react";
 import { getCitiesFromUf } from "../../../services/ibgeApi";
+import { maskInputPhone } from '../../../utils/masks'
 import axios from "axios";
 
 type Ufs = {
@@ -147,6 +148,7 @@ export function ContactForm({ ufs }: ContactFormProps) {
           {...register("phone")}
           error={errors.phone}
           minH="26px"
+          onChange={(e) => setValue('phone', maskInputPhone(e.target.value))}
         />
         <Select
           fieldName="subject"
@@ -209,9 +211,10 @@ export function ContactForm({ ufs }: ContactFormProps) {
         width="fit-content"
         display="block"
         ml="auto"
+        mr={["auto", 0]}
         px="5"
         mt="6"
-        fontWeight={300}
+        fontWeight={500}
         type="submit"
         colorScheme="blue"
         isLoading={isSubmitting}
