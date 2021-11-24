@@ -79,6 +79,7 @@ export function RecipeItemView({ isWideScreen, content }: RecipeItemViewProps) {
                 mt="4"
                 px="6"
                 spacing={[null, "6"]}
+                width="100%"
               >
                 <Box
                   bg="yellow.500"
@@ -88,7 +89,7 @@ export function RecipeItemView({ isWideScreen, content }: RecipeItemViewProps) {
                   height="fit-content"
                   minH={["100%", "414px"]}
                   w="fit-content"
-                  mx="auto"
+                  mx={["0", "auto", "0"]}
                 >
                   <Heading size="lg">Ingredientes:</Heading>
                   <Box

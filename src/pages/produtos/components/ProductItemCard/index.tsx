@@ -32,8 +32,6 @@ export function ProductItemCard({ item, isFiltering }: ProductItemCardProps) {
         src={item.acf.image.url}
         alt={`Produto ${item.title} ${item.acf.amount}`}
         h="auto"
-        border="1px solid #D3D3D3"
-        borderRadius="10px"
         w='100%'
       />
       <Heading size="md" mt="5">
