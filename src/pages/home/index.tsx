@@ -39,14 +39,14 @@ export default function Home() {
         direction={["column", "row"]}
         maxW="1150px"
         mt={["4", "16"]}
-        mx={["4", "10", "16", "20"]}
+        mx={["6", "12", "16", "20"]}
         spacing={["", "6", "10", "16", "24"]}
       >
         <MarketingCard
           boldHeading="Galinhas Saudáveis"
           lightHeading="Ovos Ricos em Nutrientes"
           imageTitle="Galinha"
-          imageURL="/static/images/banner-vertical-ovos-antibioticos@2x.png"
+          imageURL="/static/images/banner-vertical-ovos-antibioticos.png"
           imagePosition="bottom"
           isWideScreen={isWideScreen}
         />
@@ -54,7 +54,7 @@ export default function Home() {
           boldHeading="Conheça toda"
           lightHeading="Nossa linha de ovos"
           imageTitle="Caixas de ovos"
-          imageURL="/static/images/banner-vertical-ovos-produtos@2x.png"
+          imageURL="/static/images/banner-vertical-ovos-produtos.png"
           imagePosition="top"
           isWideScreen={isWideScreen}
         />
