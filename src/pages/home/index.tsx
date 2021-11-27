@@ -37,7 +37,7 @@ export default function Home() {
       <RecipeInviteCard />
       <Stack
         direction={["column", "row"]}
-        maxW="1150px"
+        maxW="1120px"
         mt={["4", "16"]}
         mx={["6", "12", "16", "20"]}
         spacing={["", "6", "10", "16", "24"]}
