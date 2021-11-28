@@ -94,7 +94,7 @@ export function Footer() {
           )}
           {!isWideScreen ? (
             <Text mt="2.5" color="white" fontSize="14" align="center">
-              14 0000-0000 - contato@ovostinoco.com.br <br /> Fazenda Santa
+              14 3586-1654 - contato@ovostinoco.com.br <br /> Fazenda Santa
               Maria, S/N Guarantã-SP
             </Text>
           ) : (
@@ -103,7 +103,7 @@ export function Footer() {
               align="left"
               fontSize={["14", "14", "14", "14", "24"]}
             >
-              <Text>14 0000-0000</Text>
+              <Text>14 3586-1654</Text>
               <Text>contato@ovostinoco.com.br</Text>
               <Text> Fazenda Santa Maria, S/N Guarantã-SP</Text>
             </VStack>

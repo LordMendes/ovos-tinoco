@@ -72,7 +72,7 @@ export default function InstitutionalPage() {
                 vendendo pintinhos de um dia de vida, oque levou o meu avô a
                 comprar 500 cabeças e colocá-las dentro de um banheiro em sua
                 casa. Folclore ou não, assim começou uma história de
-                empreendimento na avicultura de postura que já dura 75 anos!
+                empreendimento na avicultura de postura que já dura 76 anos!
               </Text>
             </Box>
             <Flex
@@ -147,7 +147,7 @@ export default function InstitutionalPage() {
             lineHeight={["16px", "23px"]}
             maxW={["100%", "720px", "720px", "1120px"]}
           >
-            Ao completarmos 75 anos de uma bela história na avicultura em 2020,
+            Ao completarmos 76 anos de uma bela história na avicultura em 2021,
             a marca foi remodelada, passando a se chamar Ovos Tinôco, com o
             intuito de continuar o legado do Sr. Olavo do Prado Queiroz, sempre
             melhorando e transformando para oferecer o melhor a você!

@@ -4,7 +4,7 @@
 
 .numberSlide1 {
   background-image: url("../../assets/images/Slideshow4.png");
-  background-size: 100% 100%;
+  background-size: 1920px 100%;
   background-color: #cccccc;
   background-position: center;
   display: flex;
@@ -31,7 +31,7 @@
 
 .numberSlide2 {
   background-image: url("../../assets/images/Slide-receita.png");
-  background-size: 100% 100%;
+  background-size: 1920px 100%;
   background-color: #cccccc;
   background-position: center;
   display: flex;
@@ -45,7 +45,7 @@
 
 .numberSlide3 {
   background-image: url("../../assets/images/Slide-OvosRicos.png");
-  background-size: 100% 100%;
+  background-size: 1920px 100%;
   background-color: #cccccc;
   background-position: center;
   display: flex;
@@ -59,7 +59,7 @@
 
 .numberSlide4 {
   background-image: url("../../assets/images/Slide-GSaudaveis.png");
-  background-size: 100% 100%;
+  background-size: 1920px 100%;
   background-color: #cccccc;
   background-position: center;
   display: flex;
@@ -139,6 +139,21 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .numberSlide1 {
+    background-size: 1100px 100%;
+  }
+  .numberSlide2 {
+    background-size: 1100px 100%;
+  }
+  .numberSlide3 {
+    background-size: 1100px 100%;
+  }
+  .numberSlide4 {
+    background-size: 1100px 100%;
+  }
+}
+
 @media (max-width: 1000px) {
   .navigationWrapper {
     height: 625px;
@@ -160,17 +175,19 @@
     width: 56px;
     height: 56px;
   }
+}
+@media (max-width: 625px) {
   .numberSlide1 {
-    background-size: 120% 100%;
+    background-size: 800px 100%;
   }
   .numberSlide2 {
-    background-size: 120% 100%;
+    background-size: 800px 100%;
   }
   .numberSlide3 {
-    background-size: 120% 100%;
+    background-size: 800px 100%;
   }
   .numberSlide4 {
-    background-size: 120% 100%;
+    background-size: 800px 100%;
   }
 }
 
@@ -188,21 +205,6 @@
     top: 92%;
   }
   .numberSlide1 {
-    background-size: 160% 100%;
-  }
-  .numberSlide2 {
-    background-size: 160% 100%;
-  }
-  .numberSlide3 {
-    background-size: 160% 100%;
-  }
-  .numberSlide4 {
-    background-size: 160% 100%;
-  }
-}
-
-@media (max-width: 425px) {
-  .numberSlide1 {
     background-image: url("../../assets/images/banner-tinoco05.png");
     background-size: 100% 100%;
   }
@@ -219,3 +221,6 @@
     background-size: 100% 100%;
   }
 }
+
+/* @media (max-width: 425px) {
+} */
