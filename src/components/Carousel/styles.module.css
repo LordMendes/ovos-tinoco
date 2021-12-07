@@ -206,21 +206,35 @@
   }
   .numberSlide1 {
     background-image: url("../../assets/images/banner-tinoco05.png");
-    background-size: 100% 100%;
+    background-size: 480px 100%;
   }
   .numberSlide2 {
     background-image: url("../../assets/images/banner-tinoco02.png");
-    background-size: 100% 100%;
+    background-size: 480px 100%;
   }
   .numberSlide3 {
     background-image: url("../../assets/images/banner-tinoco03.png");
-    background-size: 100% 100%;
+    background-size: 480px 100%;
   }
   .numberSlide4 {
     background-image: url("../../assets/images/banner-tinoco01.png");
-    background-size: 100% 100%;
+    background-size: 480px 100%;
   }
 }
 
-/* @media (max-width: 425px) {
-} */
+
+
+@media (max-width: 380px) {
+  .numberSlide1 {
+    background-size: 380px 100%;
+  }
+  .numberSlide2 {
+    background-size: 380px 100%;
+  }
+  .numberSlide3 {
+    background-size: 380px 100%;
+  }
+  .numberSlide4 {
+    background-size: 380px 100%;
+  }
+}
